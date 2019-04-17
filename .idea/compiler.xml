@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="digoubuy-config-server" />
+        <module name="digoubuy-gateway-service" />
+        <module name="digoubuy-keygen-service" />
+        <module name="digoubuy-scheduler-service" />
+        <module name="digoubuy-service-registry" />
+        <module name="digoubuy-stock-service" />
+        <module name="digoubuy-trade-service" />
+        <module name="digoubuy-user-service" />
+        <module name="digoubuy-website-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="digoubuy-getway-service" target="1.8" />
+      <module name="digoubuytradeservice" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="digoubuy-config-server" options="-parameters" />
+      <module name="digoubuy-gateway-service" options="-parameters" />
+      <module name="digoubuy-getway-service" options="-parameters" />
+      <module name="digoubuy-keygen-service" options="-parameters" />
+      <module name="digoubuy-scheduler-service" options="-parameters" />
+      <module name="digoubuy-service-registry" options="-parameters" />
+      <module name="digoubuy-stock-service" options="-parameters" />
+      <module name="digoubuy-trade-service" options="-parameters" />
+      <module name="digoubuy-user-service" options="-parameters" />
+      <module name="digoubuy-website-service" options="-parameters" />
+      <module name="digoubuytradeservice" options="-parameters" />
+    </option>
+  </component>
+</project>

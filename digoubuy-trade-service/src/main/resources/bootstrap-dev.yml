@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: ${kafka.brokers.host}
+          auto-create-topics: true
+          required-acks: -1
+  redis:
+    host: 106.13.83.153
+    port: 6379
+
+sharding:
+  jdbc:
+    datasource:
+      names: ds
+      ds:
+        url: jdbc:mysql://119.23.106.180:3306/digou-buy-trade
+        username: root
+        password: 037b6d7f97f0
+zk:
+  host: ${zookeeper.host}
+
+es:
+  host: ${elastic.search.host}
+
+alipay:
+  merchantPrivateRSA: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDeMW3qPSXrZQbZ0QZZ2Xz4bWUX+MjL5xidB8XkvhkxqigsL8tO8wV+vzb6LCT3QY3qnCODhf1RyazC/C5d8ZO2YNl8kZeJ/2CbPWQwF1VKl1ynd47Ciybh8kTr1NmkLyCANEo3sp6Ea/Ziie/FNAm/bg871L9acYliR8Ory4LBdzlg56V+slMVsDbT0WwxKEZ/mjTJ99qE10Qd68vYTaXNRdpSVQwRnQY744KvyXM8eCbQ3Whg/veO/ZTDCEJtJ84XsyEvX/8T99uq1fvQAHYy84MUJy5Yk5fmHebaSdlrURH0DTFS9osiVLdnza1qauRtMF57wZMGzBLsASgQO3v5AgMBAAECggEBAL/oOWMDBWlWjKA8pRudeQ6ojZQy0FssclnOiOGUPvZiXOgtL5A03h4m0TkqP5M/D2//A71pUO3/HjQa04FYUZhH9hBdP2F1LN9oGsxemtAeA2yxGqB0x1SHh3eZE5F3Er8oaqHIqJj/FoLtWCYfV/v69zVZ/xwCzAISsbIDyB+HWdKRD7jfC0pDEjiu6SJPJ996ksLNKls/OsELnIgevMr2fErWWxZoGYgblprMGqenuLYevQkaR1nSnyedMtSAatYbxq9HJPzC9aknnJT0K52Dioo+KQXIF0P6RjmFs5xaTlTyU+g+83BZRB2dfUmn8j0dR9UtWLWT/Hc1uIlzGAECgYEA9ri8L+WC1rNauHoWBIBbwxICH9ERnGYQqqBv2VuUFubQfRK645pHScTNEz98wTN9LTj2v7rN9dmUCAwL/Z0x3Nebtmn0As5d6wi3S7mf3smiOAozRYPRieVrxGt0O91fL3JfwYR3go5S5qD0PakE6mvdKw23qwRoO/iWypWyDTkCgYEA5oyM68/J2ijr/K2hkD6E7+fNlXIIyltMu3aLdjlgedpp02kEhaW5DcgOWslY6wolQEPWJVku0M8utvI7A5aLaO0iYFrzTUgwQwkRVEHKlOhDWFPQQZoVzzW/o2I1IO/qM8XbouIAx9ppmWNvLWcsyu28LSQrYilxxzvXIH+/pMECgYEA2ByNSu8hImvMZZcbPiopNr/JeJErefG1W6BZGO2s1DquGUCUz9VN6IIomFmeL6WoWjpxeRRqYJWLo1jaD/bnvGhoDurUQLj/b2cdF4mrTf0UyT22F4gVvVJmiZEOKXoJbIgk9F/SR1vfpgEKsBAjLCv7eUD0xyp/Gzju7NkfM5ECgYA8ZA656nkWc2e1jYnnrejGqvK4NeHFl/rWlCvd8ROrd6IG5dhwZcO+r2vLLjjjgInXdq2OpPjVa5/x/iulOfcUqiE6GjjnQoSZ2rM2XfGB5gFWDsZbmNAjshGb66q9EPtJSofI9+h6cWT98AT8YK1kDrgfHv1aPj72kF8+vRfnQQKBgQD2dsSzo5bbagOcJtF6GLlnk7jXDElMkGhTfAlWbxLJEi68+NdBEMih20HdRVuRxOK19WTVug3+Lj1f4j/P1D28FiDMzvAWiesI7nxfjBOzATzmpFcIKz8P6/3wSU1eE/obnFIhbmyQY34C4kuLextO4kpGcI79Ab9ET9QkU0BUdQ==
+  publicRSA: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsfSsN8238mXw0Z7+0XdiQFkmVN7LpVHUDs+T92dodvgrNVgLULWBY8sQbU9/OuS2M5ia36chJvYiEv0zB7Ktsqq8HcZV+Pk6QaiUHueSYEwEsgmrm9YeExbjxnl/dx7RiQCVl6AZXSGBlMW8k7GveIOSlfyC/YmVSIKdolPfIvTYrZK8nTe/ftaEn5WFyU7MtJ1/5d2fwXgB5SkInuOKHk8AjZl79MUXOB2VKdYpKOiSAS2qopyiKvy7qvwLqw2njdZMoYYBb7D2avYaB5Pp8PCHkJFr3CiWzkf+Sa6tYDEmrQsnsORQrHZO7EGGOiLDE7mPuEEsY43MD2WYSkFbAQIDAQAB

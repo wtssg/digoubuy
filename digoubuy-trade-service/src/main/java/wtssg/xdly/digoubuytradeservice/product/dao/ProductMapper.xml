@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wtssg.xdly.digoubuytradeservice.product.dao.ProductMapper">
+  <resultMap id="BaseResultMap" type="wtssg.xdly.digoubuytradeservice.product.entity.Product">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="brand_id" jdbcType="BIGINT" property="brandId" />
+    <result column="spu_name" jdbcType="VARCHAR" property="spuName" />
+    <result column="title_name" jdbcType="VARCHAR" property="titleName" />
+    <result column="title_price" jdbcType="DECIMAL" property="titlePrice" />
+    <result column="title_img_url" jdbcType="VARCHAR" property="titleImgUrl" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <resultMap id="ProductDetailMap" type="wtssg.xdly.digoubuytradeservice.product.entity.Product">
+    <id column="p_id" jdbcType="BIGINT" property="id" />
+    <result column="p_category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="p_brand_id" jdbcType="BIGINT" property="brandId" />
+    <result column="p_spu_name" jdbcType="VARCHAR" property="spuName" />
+    <result column="p_title_name" jdbcType="VARCHAR" property="titleName" />
+    <result column="p_title_price" jdbcType="DECIMAL" property="titlePrice" />
+    <result column="p_title_img_url" jdbcType="VARCHAR" property="titleImgUrl" />
+    <result column="p_status" jdbcType="TINYINT" property="status" />
+    <result column="p_create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="p_update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <collection property="skuList" resultMap="ProductSkuMap"/>
+  </resultMap>
+
+  <resultMap id="ProductSkuMap" type="wtssg.xdly.digoubuytradeservice.product.entity.ProductSku">
+    <id column="s_id" jdbcType="BIGINT" property="id" />
+    <result column="s_spu_id" jdbcType="BIGINT" property="spuId" />
+    <result column="s_sku_name" jdbcType="VARCHAR" property="skuName" />
+    <result column="s_sku_price" jdbcType="DECIMAL" property="skuPrice" />
+    <result column="s_img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="s_enable_flag" jdbcType="TINYINT" property="enableFlag" />
+    <result column="s_create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="s_update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <collection property="skuPropertyOptionList" resultMap="SkuPropertyOptionMap"/>
+  </resultMap>
+
+  <resultMap id="SkuPropertyOptionMap" type="wtssg.xdly.digoubuytradeservice.product.entity.SkuPropertyOption">
+    <id column="o_id" jdbcType="BIGINT" property="id" />
+    <result column="o_sku_id" jdbcType="BIGINT" property="skuId" />
+    <result column="o_property_id" jdbcType="BIGINT" property="propertyId" />
+    <result column="o_property_option_id" jdbcType="BIGINT" property="propertyOptionId" />
+    <result column="o_enable_flag" jdbcType="TINYINT" property="enableFlag" />
+    <result column="o_create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="o_update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, category_id, brand_id, spu_name, title_name,title_price,title_img_url, status, create_time, update_time
+  </sql>
+
+  <sql id="Product_List">
+    p.id p_id, p.category_id p_category_id, p.brand_id p_brand_id, p.spu_name p_spu_name,
+    p.title_name p_title_name, p.title_price p_title_price, p.title_img_url p_title_img_url,
+    p.status p_status, p.create_time p_create_time, p.update_time p_update_time
+  </sql>
+  <sql id="Sku_List">
+    s.id s_id, s.spu_id s_spu_id, s.sku_name s_sku_name,s.sku_price s_sku_price,s.img_url s_img_url,
+    s.enable_flag s_enable_flag, s.create_time s_create_time, s.update_time s_update_time
+  </sql>
+  <sql id="Sku_Property_Option_List">
+    o.id o_id, o.sku_id o_sku_id, o.property_id o_property_id, o.property_option_id o_property_option_id,
+    o.enable_flag o_enable_flag, o.create_time o_create_time, o.update_time o_update_time
+  </sql>
+
+  <select id="selectProductDetail" resultMap="ProductDetailMap">
+    SELECT
+    <include refid="Product_List"/>,
+    <include refid="Sku_List"/>,
+    <include refid="Sku_Property_Option_List"/>
+    FROM t_product p
+    LEFT JOIN t_sku s ON p.id = s.spu_id
+    LEFT JOIN t_sku_property_option o ON s.id = o.sku_id
+    WHERE p.id = #{productId} AND s.enable_flag = 1 AND o.enable_flag = 1
+  </select>
+
+  <!--<select id="selectByCategory" resultMap="BaseResultMap" parameterType="java.lang.Long" >-->
+    <!--select-->
+    <!--<include refid="Base_Column_List" />-->
+    <!--from t_product-->
+    <!--where category_id = #{categoryId} and status =1-->
+  <!--</select>-->
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_product
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="wtssg.xdly.digoubuytradeservice.product.entity.Product">
+    insert into t_product (id, category_id, brand_id, 
+      spu_name, title_name, title_price, 
+      title_img_url, status, create_time, 
+      update_time)
+    values (#{id,jdbcType=BIGINT}, #{categoryId,jdbcType=BIGINT}, #{brandId,jdbcType=BIGINT}, 
+      #{spuName,jdbcType=VARCHAR}, #{titleName,jdbcType=VARCHAR}, #{titlePrice,jdbcType=DECIMAL}, 
+      #{titleImgUrl,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="wtssg.xdly.digoubuytradeservice.product.entity.Product">
+    insert into t_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="categoryId != null">
+        category_id,
+      </if>
+      <if test="brandId != null">
+        brand_id,
+      </if>
+      <if test="spuName != null">
+        spu_name,
+      </if>
+      <if test="titleName != null">
+        title_name,
+      </if>
+      <if test="titlePrice != null">
+        title_price,
+      </if>
+      <if test="titleImgUrl != null">
+        title_img_url,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="categoryId != null">
+        #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="brandId != null">
+        #{brandId,jdbcType=BIGINT},
+      </if>
+      <if test="spuName != null">
+        #{spuName,jdbcType=VARCHAR},
+      </if>
+      <if test="titleName != null">
+        #{titleName,jdbcType=VARCHAR},
+      </if>
+      <if test="titlePrice != null">
+        #{titlePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="titleImgUrl != null">
+        #{titleImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="wtssg.xdly.digoubuytradeservice.product.entity.Product">
+    update t_product
+    <set>
+      <if test="categoryId != null">
+        category_id = #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="brandId != null">
+        brand_id = #{brandId,jdbcType=BIGINT},
+      </if>
+      <if test="spuName != null">
+        spu_name = #{spuName,jdbcType=VARCHAR},
+      </if>
+      <if test="titleName != null">
+        title_name = #{titleName,jdbcType=VARCHAR},
+      </if>
+      <if test="titlePrice != null">
+        title_price = #{titlePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="titleImgUrl != null">
+        title_img_url = #{titleImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="wtssg.xdly.digoubuytradeservice.product.entity.Product">
+    update t_product
+    set category_id = #{categoryId,jdbcType=BIGINT},
+      brand_id = #{brandId,jdbcType=BIGINT},
+      spu_name = #{spuName,jdbcType=VARCHAR},
+      title_name = #{titleName,jdbcType=VARCHAR},
+      title_price = #{titlePrice,jdbcType=DECIMAL},
+      title_img_url = #{titleImgUrl,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

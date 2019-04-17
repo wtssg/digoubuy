@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://www.vmall.com/search?keyword=%E8%8D%A3%E8%80%80 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title></title>
+
+    <link href="/css/search/ec.core.base.min.css" rel="stylesheet" type="text/css">
+
+    <link href="/css/search/main.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+</head>
+<body class="wide">
+<div class="top-banner" id="top-banner-block"></div>
+<img src="/image/icon-common.png" class="hide">
+<!-- 20130605-qq-彩贝-start -->
+<div class="qq-caibei-bar hide" id="caibeiMsg">
+    <div class="layout">
+        <div class="qq-caibei-bar-tips" id="HeadShow"></div>
+        <div class="qq-caibei-bar-userInfo" id="ShowMsg"></div>
+    </div>
+</div>
+<!-- 20130605-qq-彩贝-end -->
+
+<div class="shortcut">
+    <div class="layout">
+        <div class="s-sub">
+            <ul>
+                <li><a href="/homepage">首页</a></li>
+                <li class="s-hwep hide" id="li-enterprise-preferential"></li>
+                <!--<li>-->
+                    <!--<div class="s-dropdown">-->
+                        <!--<div class="h">-->
+                            <!--<a class="icon-dropdown">更多精彩</a>-->
+                        <!--</div>-->
+                        <!--<div class="b">-->
+                            <!--<div class="dropdown-more w-119">-->
+                                <!--<dl>-->
+                                    <!--<dt><a href="http://emui.huawei.com/cn/" target="_blank"-->
+                                           <!--onclick="pushHeaderMsg(&#39;EMUI&#39;,&#39;http://emui.huawei.com/cn/&#39;)">EMUI</a>-->
+                                    <!--</dt>-->
+                                    <!--<dt><a href="http://appstore.huawei.com/" target="_blank"-->
+                                           <!--onclick="pushHeaderMsg(&#39;应用市场&#39;,&#39;http://appstore.huawei.com/&#39;)">应用市场</a>-->
+                                    <!--</dt>-->
+                                    <!--<dt><a href="http://cloud.huawei.com/" target="_blank"-->
+                                           <!--onclick="pushHeaderMsg(&#39;华为终端云空间&#39;,&#39;http://cloud.huawei.com&#39;)">华为终端云空间</a>-->
+                                    <!--</dt>-->
+                                    <!--<dt><a href="http://developer.huawei.com/" target="_blank"-->
+                                           <!--onclick="pushHeaderMsg(&#39;开发者联盟&#39;,&#39;http://developer.huawei.com/&#39;)">开发者联盟</a>-->
+                                    <!--</dt>-->
+                                <!--</dl>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
+
+        <div class="s-main ">
+            <ul>
+
+                <li><a href="">个人主页</a></li>
+
+                <li class="s-hwep hide"></li>
+
+                <li><a href="">我的订单</a></li>
+
+
+                <li>
+                    <div class="s-dropdown s-dropdown-minicart">
+                        <div class="h h-wide" id="header-toolbar-minicart">
+                            <a href="" class="icon-minicart"
+                               rel="nofollow" target="blank">
+                                <span>购物车(<span id="header-cart-total">0</span>)</span>
+                            </a>
+                        </div>
+                        <div class="b" id="header-toolbar-minicart-content">
+                            <!-- 2017-06-19-迷你购物车-start -->
+                            <div class="dropdown-minicart">
+                                <div class="minicart-pro-empty " id="minicart-pro-empty">
+                                    <p><span class="icon-minicart"></span></p>
+                                    <p id="cartInfo">您的购物车是空的，赶紧选购吧~</p>
+                                    <a href="/homepage">去逛逛吧</a>
+                                </div>
+                                <div class="minicart-pro-list minicart-pro-list-scroll hide"
+                                     id="minicart-pro-list-block">
+                                    <ul id="minicart-goods-list"></ul>
+                                    <div class="minicart-pro-settleup" id="minicart-pro-settleup">
+                                        <p>
+                                            <span>总计：</span>
+                                            <span><b id="micro-cart-totalPrice">¥&nbsp;0</b><s
+                                                    id="micro-cart-totalOriginPrice">¥&nbsp;0</s></span>
+                                        </p>
+                                        <a class="button-minicart" id="button-minicart-go2confirm" href="javascript:;"
+                                           onclick="ec.minicart.confirm()">结算</a>
+                                        <a class="button-minicart disabled" id="disbutton-minicart-go2confirm"
+                                           style="display:none;">结算</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2017-06-19-迷你购物车-end -->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 2017-06-19-捷径栏-end -->
+
+
+<!--购物车-->
+<script type="text/javascript" id="miniCartToken"></script>
+<!-- 2017-02-15-头部-start -->
+<div class="header">
+    <div class="layout">
+        <div class="left">
+            <!--logo-start -->
+            <div class="logo"><a href="/homepage" title="地狗商城"><img
+                    src="/image/x9a6U8WW0bhrA7u0FIlY.png" alt="地狗商城"></a></div>
+            <!--logo-end -->
+
+            <!--导航-start -->
+            <div class="naver">
+                <ul id="naver" class="clearfix">
+                    <li id="zxnav_0" data-id="0">
+                        <a href="https://www.vmall.com/list-36" target="_blank"><span>手机</span></a>
+                        <input id="zxnav_0_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_0_name" type="hidden" autocomplete="off" value="手机">
+                    </li>
+                    <li id="zxnav_1" data-id="1">
+                        <a href="https://www.vmall.com/list-40" target="_blank"><span>笔记本 &amp; 平板</span></a>
+                        <input id="zxnav_1_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_1_name" type="hidden" autocomplete="off" value="笔记本 &amp; 平板">
+                    </li>
+                    <li id="zxnav_2" data-id="2">
+                        <a href="https://www.vmall.com/list-59" target="_blank"><span>智能穿戴</span></a>
+                        <input id="zxnav_2_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_2_name" type="hidden" autocomplete="off" value="智能穿戴">
+                    </li>
+                    <li id="zxnav_3" data-id="3">
+                        <a href="https://www.vmall.com/list-43" target="_blank"><span>智能家居</span></a>
+                        <input id="zxnav_3_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_3_name" type="hidden" autocomplete="off" value="智能家居">
+                    </li>
+                    <li id="zxnav_4" data-id="4">
+                        <a href="https://www.vmall.com/list-54" target="_blank"><span>热销配件</span></a>
+                        <input id="zxnav_4_flag" type="hidden" autocomplete="off" value="yes">
+                        <input id="zxnav_4_name" type="hidden" autocomplete="off" value="热销配件">
+                    </li>
+                    <li id="zxnav_5" data-id="5">
+                        <a href="https://www.vmall.com/list-34" target="_blank"><span>增值服务&amp;其他</span></a>
+                        <input id="zxnav_5_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_5_name" type="hidden" autocomplete="off" value="增值服务&amp;其他">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right">
+            <!--搜索条-start-->
+            <div class="search-bar relative" id="searchBar-area">
+                <div class="search-bar-form" id="search-bar-form">
+                    <form id="search-bar">
+                        <input type="text" class="text" maxlength="200" id="search-kw" autocomplete="off">
+                        <input type="submit" class="button iconfont" value="">
+                    </form>
+                </div>
+
+                <div class="autocomplete-w1">
+                    <div class="autocomplete" id="Autocomplete_bb618"
+                         style="display: none; width: 285px; max-height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+        <!--搜索条-end -->
+    </div>
+</div>
+<!--头部-end -->
+
+<div class="search" style="background: #F5F5F5">
+    <div class="layout">
+
+        <!--搜索提示-start -->
+        <div class="pro-cate-tips">
+            <h2>搜索&nbsp;&nbsp;<span class="red f14" id="record-name"></span>&nbsp;&nbsp;共找到商品<span id="record-totalRow"></span>件
+            </h2>
+        </div>
+        <!--搜索提示-end -->
+
+        <!--商品类别-start -->
+        <div class="pro-cate-area">
+            <!--商品类别-排序-start -->
+            <div class="pro-cate-sort clearfix">
+                <div class="p-title">排序：</div>
+                <div class="p-values fl" style="margin-left:30px;">
+                    <div class="p-expand">
+                        <ul class="clearfix" id="sort-type">
+                            <!-- 升序选择（从低到高）： sort-asc selected   降序选择（从高到低）： sort-desc selected -->
+                            <li id="sort-overAll" class="selected"><a title="综合">综合<s></s></a></li>
+                            <li id="sort-register_date" class="unselected"><a title="最新">最新<s></s></a></li>
+                            <li id="sort-price" class="unselected">
+                                <a  style="">价格
+                                    <div style="float: right; height: 18px; width: 15px" >
+                                        <div id="price-down" class="unselected" title="价格从低到高" style="height: 50%;"></div>
+                                        <div id="price-up" class="unselected" title="价格从高到低" style="height: 50%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--商品类别-排序-end -->
+        </div>
+        <!--商品类别-end -->
+
+        <div class="hr-20"></div>
+
+        <!--频道-列表-start -->
+        <div class="channel-list">
+            <!--商品列表-start -->
+            <div class="pro-list">
+                <ul class=" clearfix" id="pro-list">
+
+                </ul>
+            </div>
+            <!--商品列表-end -->
+            <!-- 分页-start -->
+            <div id="search-pager" class="pager" style="visibility: visible">
+                <ul>
+                    <li class="pgNext link first first-empty" onclick="search(0)">|&lt;</li>
+                    <li class="pgNext link pre pre-empty" onclick="search($('#currentPage').html() - 2)">&lt;</li>
+                    <span class="qpages" id="qpages">
+                    </span>
+                    <li class="pgNext link next" onclick="search($('#currentPage').html())">&gt;</li>
+                    <li class="pgNext link last" id="last-page">&gt;|</li>
+
+                </ul>
+            </div><!-- 分页-end -->
+            <div class="hr-20"></div>
+        </div>
+        <!--频道-列表-end -->
+
+    </div>
+</div>
+
+
+<!--悬浮工具栏-start -->
+<div class="hungBar j-hungBar">
+    <div class="hungBar-content">
+        <a target="_blank" href="/trade/cart" timetype="timestamp"
+           class="hungBar-cart" title="购物车"><span style="display:none;"></span><i>购物车</i></a>
+        <a class="hungBar-top" title="返回顶部" id="hungBar-top"><i>返回顶部</i></a>
+    </div>
+</div>
+<!--悬浮工具栏-end -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    var pageSize = 20;
+    var url = location.href;
+    var keyword = decodeURI(url.substring(url.indexOf("=")+1,url.length));
+    $("#search-kw").val(keyword);
+    // 初始化
+    $(function () {
+
+        $('title').html("商品搜索_" + keyword);
+        $('#record-name').html("[" + keyword + "]");
+        search(0);
+        // 排序
+        $("#search-bar").submit(function (event) {
+            event.preventDefault();
+            var keyword = $('#search-kw').val();
+            var url = "/product/search";
+            window.open(encodeURI(url + "?keyword=" + keyword));
+        });
+        $('#sort-overAll').click(function () {
+            $('#sort-overAll').attr("class", "selected");
+            $('#sort-register_date').attr("class", "unselected");
+            $('#sort-price').attr("class", "unselected");
+            $('#price-up').attr("class", "unselected");
+            $('#price-down').attr("class", "unselected");
+            search(0);
+        });
+        $('#sort-register_date').click(function () {
+            $('#sort-overAll').attr("class", "unselected");
+            $('#sort-register_date').attr("class", "selected");
+            $('#sort-price').attr("class", "unselected");
+            $('#price-up').attr("class", "unselected");
+            $('#price-down').attr("class", "unselected");
+            search(0);
+        });
+        $('#price-up').click(function () {
+            $('#sort-overAll').attr("class", "unselected");
+            $('#sort-register_date').attr("class", "unselected");
+            $('#sort-price').attr("class", "selected");
+            $('#price-up').attr("class", "selected");
+            $('#price-down').attr("class", "unselected");
+            search(0);
+        });
+        $('#price-down').click(function () {
+            $('#sort-overAll').attr("class", "unselected");
+            $('#sort-register_date').attr("class", "unselected");
+            $('#sort-price').attr("class", "selected");
+            $('#price-up').attr("class", "unselected");
+            $('#price-down').attr("class", "selected");
+            search(0);
+        });
+
+    });
+
+    function search(pageNumber) {
+        var sortCondition = 0;
+        if ($('#sort-overAll').attr("class") == "selected") {
+            sortCondition = 0;
+        } else if ($('#sort-register_date').attr("class") == "selected") {
+            sortCondition = 1;
+        } else if ($('#price-up').attr("class") == "selected") {
+            sortCondition = 2;
+        } else {
+            sortCondition = 3;
+        }
+
+        var total = 0;
+        var url = location.href;
+        var keyword = decodeURI(url.substring(url.indexOf("=")+1,url.length));
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8666/product/search",
+            data: JSON.stringify({
+                "pageNumber": pageNumber * pageSize,
+                "pageSize": pageSize,
+                "sortCondition" : sortCondition,
+                "searchContent": keyword
+            }),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (data) {
+                if (data.code != 200) {
+                    search();
+                } else {
+                    total = data.data.total;
+                    $('#record-totalRow').html(total);
+                    var product = data.data.productList;
+                    // 动态生成商品展示
+                    $('#pro-list').empty();
+                    for (var i = 0; i < product.length; i++) {
+                        var href = "/product/productDetail?product_id=" + product[i].id;
+
+                        $('#pro-list').append(
+                            "<li>\n" +
+                            "    <div class=\"pro-panels \"><input type=\"hidden\" id=\"itemdata" + i + "\"" +
+                            "         itemid=\"" + product[i].id + "\" itemname=\"" + product[i].spuName + "\"><a\n" +
+                            "         href=\" "+ href +"\" target=\"_blank\"\n" +
+                            "                                onclick=\"\">\n" +
+                            "                            <p class=\"p-img\"><img src=\"" + product[i].titleImgUrl + "\"\n" +
+                            "                                                  alt=\"" + product[i].spuName + "\"></p>\n" +
+                            "                            <p class=\"p-name\" title=\"" + product[i].titleName + "\">\n" +
+                            "                                " + product[i].titleName + "</p>\n" +
+                            "                            <p class=\"p-price\"><b>¥" + product[i].titlePrice + "<span>多配置可选</span></p></a></div>\n" +
+                            "                    </li>"
+                        );
+                    }
+                    // 生成页码
+                    $('#qpages').empty();
+                    if (total > pageSize) {
+                        var curPageNumber = 1;
+                        $('#search-pager').css("visibility", "visible");
+                        for (var j = 0; j < total; j += pageSize) {
+                            var s = "onclick=search(" + curPageNumber - 1 + ")";
+                            curPageNumber = j / pageSize + 1;
+                            if (curPageNumber == pageNumber + 1) {
+                                $('#qpages').append("<li class=\"page-number link pgCurrent\" id='currentPage'>" + curPageNumber + "</li>");
+                            } else {
+                                $('#qpages').append("<li class=\"page-number link\" onclick='search($(this).html() - 1)'>" + curPageNumber + "</li>");
+                            }
+                        }
+                        $('#last-page').attr("onclick", "search(" + --curPageNumber + ")");
+                    } else {
+                        $('#search-pager').css("visibility", "hidden");
+                    }
+                }
+            }
+        });
+    }
+
+
+</script>
+
+<script type="text/javascript">
+    $("#hungBar-top").click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 500);
+    });
+</script>
+</body>
+</html>

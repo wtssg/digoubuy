@@ -1,0 +1,23 @@
+server:
+  port: 8345
+
+spring:
+  application:
+    name: key-generator
+  profiles:
+    active: dev
+  cloud:
+    config:
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://106.13.83.153:8888/eureka,http://182.254.188.234:8888/eureka,http://23.105.202.251:8888/eureka
+
+logging:
+  config: classpath:logback.xml

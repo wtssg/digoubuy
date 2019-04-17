@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0196)https://hwid1.vmall.com/CAS/portal/login.html?validated=true&themeName=red&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Fcaslogin&loginChannel=26000000&reqClientType=26&lang=zh-cn&countryCode=cn -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>登录</title>
+
+    <link href="/css/login/common.css" rel="stylesheet" type="text/css">
+
+    <link href="/css/login/dialog.css" rel="stylesheet" type="text/css">
+
+    <link href="/css/login/common(1).css" rel="stylesheet" type="text/css">
+
+    <link href="/css/login/zh-cn.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="login themeName-red">
+
+<div>
+    <!-- 头部  -->
+    <div class="customer-header">
+        <div class="head_center">
+            <div class="main-logo adHeadPicContainer"><img src="/image/HUAWEI.png" class="adHeadPic"></div>
+            <div class="website-name"><b style="font-size: 18px;margin-top: -5px;float: left;color:#cccccc;">|</b> <b
+                    class="adHeadTitle">地狗商城</b></div>
+        </div>
+    </div>
+
+    <!--登录 -->
+    <div class="login_bg" id="loginform">
+        <div style="background-image: url('https://hwid1.vmall.com/CAS/up/idmw_rss_29/ads/login_default_bg.png');"
+             class="g login_adBg">
+            <div class="login-area login-right login-area-box">
+
+
+                <div class="userAccountLogin">
+
+                    <div class="h">
+
+                        <span class="loginTitle loginTitle-left actived" data-type="account">帐号登录</span><span
+                            class="loginTitle splitLine loginTitle-right" data-type="qrCode">验证码登录</span>
+
+
+                    </div>
+                    <!--使用密码登录-->
+                    <div class="b-account" style="display: block;">
+                        <div class="login-form-marginTop">
+                            <div class="form-edit-area loginEventForm">
+                                <div class="userAccountLogin-errorTipsDiv" id="errorTip"></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                    <tr>
+                                        <td class="user-input-tr"><label class="lb_opacity_Class"
+                                                                         style="display: none; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
+                                                                         for="login_userName">
+                                        </label><input type="text" autocomplete="off" class="text vam"
+                                                       id="login_userName" name="userAccount" maxlength="50"
+                                                       tabindex="1" style="z-index: 1;" placeholder="请输入手机号"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="user-input-tr"><label class="lb_opacity_Class"
+                                                                         style="display: none; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
+                                                                         for="login_password">
+                                        </label><input oncut="return false;" oncopy="return false" id="login_password"
+                                                       type="password" autocomplete="off" class="text vam"
+                                                       name="password" maxlength="32" tabindex="2"
+                                                       style="z-index: 1;" placeholder="请输入密码"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="mt-links lineHeightFix" id="operLinkTd" style="visibility: hidden">
+                                            <span id="smsLoginEntrance" class="changeLoginType l"
+                                                  data-type="userAccountLogin" title="短信验证码登录"
+                                                  style="visibility: hidden;"><i class="phoneIcon marginR6"></i>短信验证码登录</span>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="margin-bottom:0;"><span class="vam error" id="pwd_login_msg"
+                                                                                style="display: none;"></span></div>
+                                            <input type="button" class="button-login" id="btnLogin"
+                                                   data-type="accountLogin" value="登录" tabindex="5">
+                                            <img class="load" src="./登录_files/loading3.gif">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mt-checkbox">
+                                            <span id="rememberNameSpan"><input type="checkbox" class="checkbox vam"
+                                                                               id="remember_me" name="remember_me"
+                                                                               tabindex="4"><label for="remember_me"
+                                                                                                   style="vertical-align:middle;">记住地狗帐号</label></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mt-links p0">
+                                            <div class="mt-links-float vam clearWidth">
+                                                <span class="regist"><a id="registText" class="btn-primary clearWidth"
+                                                                        href=""
+                                                                        title="注册帐号">注册帐号</a></span><span
+                                                    class="forgot"><a class="btn-primary clearWidth"
+                                                                      href=""
+                                                                      title="忘记密码？">忘记密码？</a></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!--使用验证码登录-->
+                    <div class="b-account" style="display: none;">
+                        <div class="login-form-marginTop smsLogin-form">
+                            <div class="form-edit-area loginEventForm">
+                                <div class="smsValidateLogin-errorTipsDiv"></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                    <tr>
+                                        <td class="user-input-tr chooseCountryTD">
+                                            <!-- 国家/地区-->
+                                            <div class="l" id="chooseCountry">
+
+                                                <div id="smsLoginCountryCodeDiv" class="ddrop-EMU5">
+                                                    <span class="select-text ar-eg" data-regions="cn"
+                                                          data-countrycode="+86"
+                                                          data-countrysite="1">+86  中国  </span><span class="suffix"
+                                                                                                     style="color: rgb(51, 51, 51);"></span>
+                                                </div>
+                                            </div>
+                                            <div class="splitLine l">
+                                            </div>
+                                            <div class="overFlowHidden">
+                                                <input type="text" autocomplete="off" class="text vam"
+                                                       id="login_phoneNum" name="userAccount" maxlength="50"
+                                                       tabindex="1" placeholder="请输入手机号">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 图形验证码 -->
+                                    <tr>
+                                        <td class="referenceTarget user-input-tr"><label class="lb_opacity_Class"
+                                                                                         style="display: block; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
+                                                                                         for="smsAuthCode">
+
+                                        </label><input type="text" autocomplete="off" class="text vam" id="smsAuthCode"
+                                                       name="smsAuthCode" maxlength="8" tabindex="3"
+                                                       validator="validator41553595406539" style="z-index: 1;"
+                                                       placeholder="请输入短信验证码">
+                                            <div id="getSmsRandomCodeDiv">
+                                                <div id="getSmsRandomCode" intervaltime="60"
+                                                     class="smsAuthBth btnUnable"><span>获取验证码</span>
+                                                    <div id="smsAuthCodeTips"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mt-links lineHeightFix" style="visibility: hidden"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="margin-bottom:0px;"><span class="vam error" id="login_msg"
+                                                                                  style="display:block"></span></div>
+                                            <input type="button" class="button-login" id="btnSMSLogin"
+                                                   data-type="smsLogin" value="登录" tabindex="5">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mt-checkbox">
+                                            <span id="sms-rememberNameSpan"><input type="checkbox" class="checkbox vam"
+                                                                                   id="remember_smsMe"
+                                                                                   name="remember_smsMe"
+                                                                                   tabindex="4"><label
+                                                    for="remember_smsMe"
+                                                    style="vertical-align:middle;">记住地狗帐号</label></span>
+                                            <div class="hidden remeberTip"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mt-links p0">
+                                            <div class="mt-links-float vam clearWidth">
+                                                <span class="regist"><a class="btn-primary clearWidth"
+                                                                        href=""
+                                                                        title="注册帐号">注册帐号</a></span><span
+                                                    class="forgot"><a class="btn-primary clearWidth"
+                                                                      href=""
+                                                                      title="忘记密码？">忘记密码？</a></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

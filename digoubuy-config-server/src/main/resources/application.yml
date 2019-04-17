@@ -1,0 +1,34 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/xdly/digou-buy-config-repo.git
+          username: xdly
+          password: wtssg233322789
+          search-paths: user-service-config,trade-service-config, stock-service-config, scheduler-service-config, key-generator-config
+    bus:
+      trace:
+        enabled: true
+    stream:
+      kafka:
+        binder:
+          brokers: 106.13.83.153:9092
+          auto-create-topics: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+eureka:
+  client:
+    service-url:
+      defaultZone: http://106.13.83.153:8888/eureka,http://182.254.188.234:8888/eureka,http://23.105.202.251:8888/eureka
+  instance:
+    ip-address: 108.61.160.55
+    prefer-ip-address: true

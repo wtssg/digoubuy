@@ -1,0 +1,44 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: ${kafka.brokers.host}
+          auto-create-topics: true
+      bindings:
+        output:
+          destination: sms_topic
+          content-type: text/plain
+        input:
+          destination: sms_topic
+          group: group
+#        bindings:
+#          output:
+#            destination: sms_topic
+#            content-type: text/plain
+#            producer:
+#              partitonKeyExpression:
+#              partitionCount:
+
+#            consumer:
+#              partitoned: true
+#      instance-count:
+
+
+  redis:
+    host: 106.13.83.153
+    port: 6379
+
+sharding:
+  jdbc:
+    datasource:
+      names: ds
+      ds:
+        url: jdbc:mysql://119.23.106.180:3306/digou-buy-user
+        username: root
+        password: 037b6d7f97f0
+redis:
+  node: ${redis.host}
+
+zk:
+  host: ${zookeeper.host}
