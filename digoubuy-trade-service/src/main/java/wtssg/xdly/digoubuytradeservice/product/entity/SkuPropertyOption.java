@@ -22,4 +22,8 @@ public class SkuPropertyOption implements Serializable {
 
     private transient Date updateTime;
 
+    private String propertyName;
+
+    private String optionName;
+
 }

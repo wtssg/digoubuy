@@ -8,7 +8,6 @@ import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.elasticsearch.search.sort.SortBuilder;
 import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -16,9 +15,7 @@ import org.springframework.stereotype.Service;
 import wtssg.xdly.digoubuytradeservice.common.constants.Constants;
 import wtssg.xdly.digoubuytradeservice.product.dao.CategoryMapper;
 import wtssg.xdly.digoubuytradeservice.product.dao.ProductMapper;
-import wtssg.xdly.digoubuytradeservice.product.entity.Category;
-import wtssg.xdly.digoubuytradeservice.product.entity.EsSearchResult;
-import wtssg.xdly.digoubuytradeservice.product.entity.Product;
+import wtssg.xdly.digoubuytradeservice.product.entity.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -116,15 +113,44 @@ public class ProductServiceImpl implements ProductService {
      * @return
      */
     @Override
-    @Cacheable(cacheNames = Constants.CACHE_PRODUCT_CATEGORY)
+//    @Cacheable(cacheNames = Constants.CACHE_PRODUCT_CATEGORY)
     public List<Category> listCategory() {
         return categoryMapper.selectAll();
     }
 
+    /**
+     * 根据商品id获得商品的所有sku和参数选项列表
+     * @param productId
+     * @return
+     */
     @Override
     @Cacheable(cacheNames = Constants.CACHE_PRODUCT_DETAIL, key = "#productId")
-    public Product productDetail(int productId) {
-        return productMapper.selectProductDetail(productId);
+    public PropertyOptionAndProductDetail productDetail(int productId) {
+        Product product =productMapper.selectProductDetail(productId);
+        List<ProductSku> skuList = product.getSkuList();
+        List<SkuPropertyOption> skuPropertyOptionList = skuList.get(0).getSkuPropertyOptionList();;
+        List<SkuPropertyDetail> list = new ArrayList<>();
+        for (int i = 0; i < skuPropertyOptionList.size(); i++) {
+            SkuPropertyDetail skuPropertyDetail = new SkuPropertyDetail();
+            skuPropertyDetail.setPropertyName(skuPropertyOptionList.get(i).getPropertyName());
+            skuPropertyDetail.setOptionList(new ArrayList<>());
+            list.add(skuPropertyDetail);
+        }
+        SkuPropertyDetail skuPropertyDetail = new SkuPropertyDetail();
+        for (int i = 0; i < skuList.size(); i++) {
+            skuPropertyOptionList = skuList.get(i).getSkuPropertyOptionList();
+            for (int j = 0; j < skuPropertyOptionList.size(); j++) {
+                List<String> optionList = list.get(j).getOptionList();
+                String optionName = skuPropertyOptionList.get(j).getOptionName();
+                if (!optionList.contains(optionName)) {
+                    optionList.add(optionName);
+                }
+            }
+        }
+        PropertyOptionAndProductDetail result = new PropertyOptionAndProductDetail();
+        result.setProduct(product);
+        result.setPropertyOptionList(list);
+        return result;
     }
 
 

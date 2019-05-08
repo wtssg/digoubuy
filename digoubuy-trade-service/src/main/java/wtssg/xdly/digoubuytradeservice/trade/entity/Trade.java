@@ -4,15 +4,21 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class Trade {
-
     private Long id;
 
     private Long tradeNo;
 
+    private String tradeNoString;
+
     private Long userUuid;
+
+    private Long addressId;
+
+    private BigDecimal totalPrice;
 
     private BigDecimal payment;
 
@@ -28,5 +34,7 @@ public class Trade {
 
     private Date updateTime;
 
+    private Long seconds;
 
+    private List<TradeItem> tradeItemList;
 }

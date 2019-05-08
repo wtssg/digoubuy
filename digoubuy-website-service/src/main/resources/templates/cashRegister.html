@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- saved from url=(0189)https://payment.vmall.com/cashier/web/index.htm?trade_order_no=20190430OD15622006275811656141&sign=b31b91cdea2517c67578178a71206c988046d28122b3f32e56219f423be2e606&timestamp=20190430210331# -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title name="title">收银台</title>
+    <link rel="stylesheet" href="/css/cashRegister/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/cashRegister/cashierStyle.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <link href="https://res.vmallres.com/ips/pc/20190119/images/favicon.ico" rel="SHORTCUT ICON" type="image/x-icon">
+
+</head>
+
+<body>
+
+<div class="container" style="">
+    <!--<div class="header clearfix"></div>-->
+    <div class="warp warp-content clearfix" style="min-height: 814px;">
+        <div class="contentArea clearfix">
+
+
+            <div class="logo_name clearfix">
+                <!--<a class="huawei_logo" href="https://www.vmall.com/" src="undefinedVmall_red.png"><img class="logoImg"-->
+                                                                                                       <!--logoname="logoSrc"-->
+                                                                                                       <!--logoattr="flag"-->
+                                                                                                       <!--srcs="https://res.vmallres.com/ips/pc/20190119/img/"-->
+                                                                                                       <!--alt="huawei"-->
+                                                                                                       <!--src="./收银台_files/Vmall_red.png"></a>-->
+                <span class="i18n" name="msg_Checkout">收银台</span>
+            </div>
+
+
+            <div class="cashier_order_area clearfix" id="cashierHome">
+                <div class="cashi%%er_orderInfo clearfix">
+                    <div class="orderInfo_img pull-left">
+                        <img src="/image/success_icon.png">
+                    </div>
+                    <div class="orderInfo_words pull-left">
+                        <div class="orderInfo_words_01 clearfix">
+                            <div class="orderWords01 clearfix">
+                                <h4 class="pull-left" name="msg_prompt">订单提交成功，只差付款了~</h4>
+                                <div class="orderNum pull-left" style="display: block;">
+                                    <span name="msg_orderNo">订单号：</span>
+                                    <span class="trade-no" style="color: #da3232;"></span>
+                                </div>
+                                <div class="payNum pull-right">
+                                    <span class="pull-right"></span>
+                                    <span class="payNumAll pull-right"></span>
+                                    <span class="payTitle pull-right">订单金额：</span>
+                                </div>
+                            </div>
+                            <h5 class="clearfix"><span class="pleasePay" name="msg_ple">请您在</span><em class="dateDiff">
+                                <span id="day" style="display: none;"></span><span name="day" style="display: none;">天</span><span
+                                    id="hour" style="display: none;"></span><span name="hour" style="display: none;">小时</span>
+                                <span id="minute" style="display: inline-block;"></span><span name="minite" style="display: inline-block;">分</span><span
+                                    id="second" style="display: inline-block;"></span><span name="second" style="display: inline-block;">秒</span>
+                            </em><span class="orderWarn" name="msg_order_warn">内完成支付，否则订单将自动取消。</span>
+                                <div class="orderInfo_show pull-right" id="trade-detail" status="down">
+                                    <span class="pull-right">订单详情</span>
+                                    <img id="trade-detail-img" src="/image/down arrow_icon.png">
+                                </div>
+                            </h5>
+
+                        </div>
+                        <div class="orderDetails clearfix">
+                            <div class="orderDetails_words" style="display: none;">
+                                <ul>
+                                    <li show=""><span name="msg_sendNomber">订单编号：</span>
+                                        <span class="trade-no" style="color: #da3232;"></span>
+                                    </li>
+
+                                    <li show=""><span name="msg_takeInf">收货信息：</span>
+                                        <span id="name"></span><span id="tel">
+                                        </span><span id="address"></span>
+                                        <span></span>
+                                    </li>
+                                    <li show=""><span name="msg_goodsName">商品名称：</span><span id="trade-name"></span></li>
+
+                                    </li>
+                                    <li show=""><span name="msg_buyTime">购买时间：</span><span id="time"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav nav-tabs" id="payTab">
+
+                </ul>
+
+                <div class="tab-content">
+                    <ul class="tab-pane fade in active" name="COMMON" id="common_pay">
+                        <li bankcode="ALIPAY" banktype="THIP" act="true" class="select">
+                            <div class="act-line">
+                                <i class="recomType">推荐</i>
+                            </div>
+                            <div class="pay_typeIco tooltip-test clearfix" bankcode="ALIPAY" banktype="THIP"
+                                 data-toggle="tooltip" title="" data-original-title="支付宝">
+                                <img src="/image/ALIPAY.png" alt="支付宝">
+                                <i></i>
+                            </div>
+                            <div class="payTool-descr clearfix"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul class="payBtn clearfix">
+                <li>
+                    <button class="confirmPay pull-right" name="msg_payBtn" id="pay-button">确认支付</button>
+                    <div id="cashCoupon">
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="hintback"></div><div class="ol_box_mask" style="visibility: hidden; background-color: #b2b2b2; opacity: .4; z-index: 5000;"></div>
+<div class="loader" style="width: 100px; height : 64px; position: fixed; visibility: visible">
+    <div class="loader-inner ball-spin-fade-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    var href = window.location.href;
+    var tradeNo = decodeURI(href.substring(href.indexOf("tradeNo"),href.length));
+    tradeNo = tradeNo.substring(tradeNo.indexOf("=") + 1, tradeNo.length);
+    $(function () {
+        startLoading();
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8666/trade/getTrade/" + tradeNo,
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    endLoading();
+                    var trade = data.data;
+                    var tradeItemList = trade.tradeItemList;
+                    var tradeName = "";
+                    for (var i = 0; i < tradeItemList.length; i++) {
+                        tradeName += tradeItemList[i].skuName;
+                    }
+                    if (tradeName.length > 50) {
+                        tradeName = tradeName.substring(0, 50) + "...";
+                    }
+                    var tradeNo = trade.tradeNo;
+                    $("#trade-name").text(tradeName);
+                    var date = new Date(trade.updateTime);
+                    var y = date.getFullYear();
+                    var m = date.getMonth() + 1;
+                    var d = date.getDate();
+                    var time =  y + '-' + m + '-' + d;
+                    $("#time").text(time);
+
+                    $(".payNumAll").text("¥" + trade.totalPrice);
+                    $(".trade-no").text(trade.tradeNoString);
+
+                    var seconds = trade.seconds - 20;
+                    var minutes = parseInt(seconds / 60);
+                    seconds = seconds % 60;
+                    $("#minute").text(minutes);
+                    $("#second").text(seconds);
+                    var addressId = trade.addressId;
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:7006/user/getAddressById/" + addressId,
+                        dataType: "json",
+                        success: function (data2) {
+                            if (data2.code == 200) {
+                                var address = data2.data;
+                                var addressString = address.province + " " + address.city + " " + address.town + " " + address.address;
+                                $("#name").text(address.name);
+                                $("#tel").text(address.tel);
+                                $("#address").text(addressString);
+                            }
+                        }
+                    });
+                    times();
+                } else {
+                    endLoading();
+                    alert("订单已过期，点击返回主页");
+                    window.location.href = "/homepage";
+                }
+            }
+        });
+    });
+
+
+    $("#trade-detail").click(function () {
+        var status = $("#trade-detail").attr("status");
+        if (status == "down") {
+            $("#trade-detail").attr("status", "up");
+            $("#trade-detail-img").attr("src", "/image/arrow_icon.png");
+            $(".orderDetails_words").css("display", "block");
+        } else if (status == "up") {
+            $("#trade-detail").attr("status", "down");
+            $("#trade-detail-img").attr("src", "/image/down arrow_icon.png");
+            $(".orderDetails_words").css("display", "none");
+        }
+    });
+
+    $("#pay-button").click(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8666/alipay/pay/" + tradeNo,
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    $("body").html(data.data);
+                }
+            }
+        });
+    });
+
+    function times() {
+        var second = parseInt($("#second").text());
+        var minute = parseInt($("#minute").text());
+        if (second != 0) {
+            if (--second < 10) {
+                second = "0" + second;
+            }
+            $("#second").text(second);
+        } else if (second == 0 && minute != 0) {
+            $("#second").text("59");
+            if (--minute < 10) {
+                minute = "0" + minute;
+            }
+            $("#minute").text(minute);
+        } else if (second == 0 && minute == 0) {
+            alert("订单已过期，点击返回主页");
+            window.location.href = "/homepage";
+            return;
+        }
+        setTimeout(function() {
+                times();
+            },
+            1000);
+    }
+
+    function startLoading() {
+        var height = $("body").height();
+        var width = $("body").width();
+        $(".ol_box_mask").css("visibility", "visible").css("width", width).css("height", height).css("background-color", "ghostwhite");
+        $(".loader").css("visibility", "visible").css("left", $(window).width() / 2 - $(".loader").width() / 2).css("top", $(window).height() / 2 - $(".loader").height() / 2);
+    }
+
+    function endLoading() {
+        $(".ol_box_mask").css("visibility", "hidden");
+        $(".loader").css("visibility", "hidden");
+    }
+</script>
+</body>
+</html>

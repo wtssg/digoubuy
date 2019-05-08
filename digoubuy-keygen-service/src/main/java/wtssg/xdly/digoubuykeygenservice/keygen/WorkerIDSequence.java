@@ -40,6 +40,6 @@ public class WorkerIDSequence {
             hostname = "snowflake_";
         }
         String path = client.create().withMode(CreateMode.EPHEMERAL_SEQUENTIAL).forPath(ZK_PATH + "/" + hostname);
-        return Long.valueOf(path.substring(path.length() -4), path.length());
+        return Long.valueOf(path.substring(path.length() -4, path.length()));
     }
 }

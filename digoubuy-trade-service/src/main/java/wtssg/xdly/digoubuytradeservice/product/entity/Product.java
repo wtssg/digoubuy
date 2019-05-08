@@ -23,6 +23,8 @@ public class Product implements Serializable {
 
     private String titleImgUrl;
 
+    private String featureImgUrl;
+
     private Byte status;
 
     private Date createTime;
@@ -30,4 +32,5 @@ public class Product implements Serializable {
     private Date updateTime;
 
     private List<ProductSku> skuList;
+
 }

@@ -120,6 +120,7 @@ a:hover {
 #price-up {
     background-image: url("/image/arrow-down.png");
 }
+
 .iconfont {
     font-family: "iconfont" !important;
     font-style: normal;
@@ -848,7 +849,7 @@ button {
 }
 
 .ec_ui_loading, .box-loading {
-    background: transparent url(../../images/echannel/icon/icon5.gif) no-repeat scroll
+    background: transparent url(../../image/loading.gif) no-repeat scroll
 }
 
 .sc-list .sc-empty-area {

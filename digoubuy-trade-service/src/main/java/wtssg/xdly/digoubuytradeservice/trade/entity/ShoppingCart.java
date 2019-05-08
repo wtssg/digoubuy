@@ -6,14 +6,13 @@ import java.util.Date;
 
 @Data
 public class ShoppingCart {
-
     private Long id;
 
     private Long userUuid;
 
     private Long skuId;
 
-    private String skuName;
+    private Integer skuNum;
 
     private Byte checkStatus;
 

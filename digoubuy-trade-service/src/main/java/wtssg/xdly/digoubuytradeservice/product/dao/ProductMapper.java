@@ -3,7 +3,6 @@ package wtssg.xdly.digoubuytradeservice.product.dao;
 import org.apache.ibatis.annotations.Mapper;
 import wtssg.xdly.digoubuytradeservice.product.entity.Product;
 
-
 @Mapper
 public interface ProductMapper {
     int deleteByPrimaryKey(Long id);
@@ -19,5 +18,4 @@ public interface ProductMapper {
     int updateByPrimaryKey(Product record);
 
     Product selectProductDetail(int productId);
-
 }

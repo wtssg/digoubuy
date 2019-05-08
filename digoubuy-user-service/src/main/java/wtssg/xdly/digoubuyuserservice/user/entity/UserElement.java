@@ -11,7 +11,7 @@ public class UserElement implements Serializable {
 
     private Long uuid;
 
-    private String email;
+    private String mobile;
 
     private String nickname;
 
@@ -20,7 +20,7 @@ public class UserElement implements Serializable {
     public UserElement(User user) {
         this.id = user.getId();
         this.uuid = user.getUuid();
-        this.email = user.getEmail();
+        this.mobile = user.getMobile();
         this.nickname = user.getNickname();
     }
 }

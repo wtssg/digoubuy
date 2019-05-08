@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import wtssg.xdly.digoubuytradeservice.common.constants.Constants;
 import wtssg.xdly.digoubuytradeservice.common.resp.ApiResult;
-import wtssg.xdly.digoubuytradeservice.product.entity.Category;
-import wtssg.xdly.digoubuytradeservice.product.entity.EsSearchResult;
-import wtssg.xdly.digoubuytradeservice.product.entity.PageSearch;
-import wtssg.xdly.digoubuytradeservice.product.entity.Product;
+import wtssg.xdly.digoubuytradeservice.product.entity.*;
 import wtssg.xdly.digoubuytradeservice.product.service.ProductService;
 
 import java.io.IOException;
@@ -50,10 +47,10 @@ public class ProductController {
     }
 
     @RequestMapping("/productDetail/{productId}")
-    public ApiResult<Product> productDetail(@PathVariable("productId") int productId) {
-        ApiResult<Product> result = new ApiResult<>(Constants.RESP_STATUS_OK, "查询产品成功");
-        Product product = productService.productDetail(productId);
-        result.setData(product);
+    public ApiResult<PropertyOptionAndProductDetail> productDetail(@PathVariable("productId") int productId) {
+        ApiResult<PropertyOptionAndProductDetail> result = new ApiResult<>(Constants.RESP_STATUS_OK, "查询产品成功");
+        PropertyOptionAndProductDetail data = productService.productDetail(productId);
+        result.setData(data);
         return result;
     }
 

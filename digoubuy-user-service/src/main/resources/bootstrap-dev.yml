@@ -9,9 +9,9 @@ spring:
         output:
           destination: sms_topic
           content-type: text/plain
-        input:
-          destination: sms_topic
-          group: group
+#        input:
+#          destination: sms_topic
+#          group: group
 #        bindings:
 #          output:
 #            destination: sms_topic

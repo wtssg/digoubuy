@@ -3,6 +3,8 @@ package wtssg.xdly.digoubuytradeservice.trade.dao;
 import org.apache.ibatis.annotations.Mapper;
 import wtssg.xdly.digoubuytradeservice.trade.entity.Trade;
 
+import java.util.List;
+
 @Mapper
 public interface TradeMapper {
     int deleteByPrimaryKey(Long id);
@@ -17,5 +19,9 @@ public interface TradeMapper {
 
     int updateByPrimaryKey(Trade record);
 
-    Trade selectByTradeNo(String out_trade_no);
+    Trade selectByTradeNo(Long tradeNo);
+
+    Trade selectByTradeNoAndUuid(Long tradeNo, Long uuid);
+
+    List<Trade> selectedByUuid(Long uuid);
 }

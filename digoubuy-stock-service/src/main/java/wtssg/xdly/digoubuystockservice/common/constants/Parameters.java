@@ -12,12 +12,9 @@ import org.springframework.stereotype.Component;
 @Data
 public class Parameters {
 
-    @Value("${es.host}")
-    private String esHost;
-
     /***zk config start ***/
-    @Value("${zk.host}")
-    private String zkHost;
+    @Value("${kafka.node}")
+    private String kafkaHost;
 
 
 }

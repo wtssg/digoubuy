@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>首页_个人中心</title>
+    <link rel="shortcut icon" href="https://www.vmall.com/favicon.ico">
+    <link href="/css/search/ec.core.base.min.css" rel="stylesheet" type="text/css">
+
+    <link href="/css/userCenter/main.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="top-banner" id="top-banner-block"></div>
+<!--彩贝-start -->
+<div class="qq-caibei-bar hide" id="caibeiMsg">
+    <div class="layout">
+        <div class="qq-caibei-bar-tips" id="HeadShow"></div>
+        <div class="qq-caibei-bar-userInfo" id="ShowMsg"></div>
+    </div>
+</div>
+<!--彩贝-end -->
+
+<div class="shortcut">
+    <div class="layout">
+        <div class="s-sub">
+            <ul>
+                <li><a href="/homepage">首页</a></li>
+                <li class="s-hwep hide" id="li-enterprise-preferential"></li>
+            </ul>
+        </div>
+
+        <div class="s-main ">
+            <ul>
+
+                <li><a href="">个人主页</a></li>
+
+                <li class="s-hwep hide"></li>
+
+                <li><a href="">我的订单</a></li>
+
+
+                <li>
+                    <div class="s-dropdown s-dropdown-minicart">
+                        <div class="h h-wide" id="header-toolbar-minicart">
+                            <a href="" class="icon-minicart"
+                               rel="nofollow" target="blank">
+                                <span>购物车(<span id="header-cart-total">0</span>)</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--捷径栏-end -->
+
+<!--头部-start -->
+<div class="header">
+    <div class="layout">
+        <div class="left">
+            <!--logo-start -->
+            <div class="logo"><a href="/homepage" title="地狗商城"><img
+                    src="/image/x9a6U8WW0bhrA7u0FIlY.png" alt="地狗商城"></a></div>
+            <!--logo-end -->
+
+            <!--导航-start -->
+            <div class="naver">
+                <ul id="naver" class="clearfix">
+                    <li id="zxnav_0" data-id="0">
+                        <a href="https://www.vmall.com/list-36" target="_blank"><span>手机</span></a>
+                        <input id="zxnav_0_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_0_name" type="hidden" autocomplete="off" value="手机">
+                    </li>
+                    <li id="zxnav_1" data-id="1">
+                        <a href="https://www.vmall.com/list-40" target="_blank"><span>笔记本 &amp; 平板</span></a>
+                        <input id="zxnav_1_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_1_name" type="hidden" autocomplete="off" value="笔记本 &amp; 平板">
+                    </li>
+                    <li id="zxnav_2" data-id="2">
+                        <a href="https://www.vmall.com/list-59" target="_blank"><span>智能穿戴</span></a>
+                        <input id="zxnav_2_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_2_name" type="hidden" autocomplete="off" value="智能穿戴">
+                    </li>
+                    <li id="zxnav_3" data-id="3">
+                        <a href="https://www.vmall.com/list-43" target="_blank"><span>智能家居</span></a>
+                        <input id="zxnav_3_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_3_name" type="hidden" autocomplete="off" value="智能家居">
+                    </li>
+                    <li id="zxnav_4" data-id="4">
+                        <a href="https://www.vmall.com/list-54" target="_blank"><span>热销配件</span></a>
+                        <input id="zxnav_4_flag" type="hidden" autocomplete="off" value="yes">
+                        <input id="zxnav_4_name" type="hidden" autocomplete="off" value="热销配件">
+                    </li>
+                    <li id="zxnav_5" data-id="5">
+                        <a href="https://www.vmall.com/list-34" target="_blank"><span>增值服务&amp;其他</span></a>
+                        <input id="zxnav_5_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_5_name" type="hidden" autocomplete="off" value="增值服务&amp;其他">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right">
+            <!--搜索条-start-->
+            <div class="search-bar relative" id="searchBar-area">
+                <div class="search-bar-form" id="search-bar-form">
+                    <form id="search-bar">
+                        <input type="text" class="text" maxlength="200" id="search-kw" autocomplete="off">
+                        <input type="submit" class="button iconfont" value="">
+                    </form>
+                </div>
+
+                <div class="autocomplete-w1">
+                    <div class="autocomplete" id="Autocomplete_bb618"
+                         style="display: none; width: 285px; max-height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+        <!--搜索条-end -->
+    </div>
+</div>
+<!--头部-end -->
+
+<div id="base_index" class="mc-index">
+
+    <div class="hr-10"></div>
+    <div class="hr-10"></div>
+    <div class="hr-30"></div>
+
+    <div class="g">
+        <div class="fr u-4-5">
+            <div class="mc-detail" style="width: 800px; margin-left: 100px">
+                <div class="clearfix">
+                    <div class="mc-user-card fl" style="width: 70%">
+                        <div class="user-head fl">
+                            <a class="user-img">
+                                <img src="/image/default_user_image.jpg"
+                                     alt="">
+                            </a>
+                        </div>
+                        <div class="mc-user-info fl " style="margin-top: 70px; margin-left: 100px">
+                            <a class="name">熄***园</a>
+                        </div>
+                        <div class="mc-user-info fl " style="float: left; margin-top: 60px; margin-left: 100px">
+                            <p class="p-price"><span id="balanceicon_myCenter" class=""><a style="font-size: 20px">206</a></span></p>
+                            <p class="p-dec" style="font-size: 15px">积分</p>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="myUserScores" value="211">
+
+                </div>
+            </div>
+
+            <div class="hr-18"></div>
+
+            <!-- 20170824-我的商城-用户信息-end -->
+
+            <div class="fl mc-middle">
+                <!-- 20190220-我的商城-我的订单-start -->
+                <div class="mc-detail mc-order" style="width: 800px; margin-left: 100px">
+                    <div class="mc-title ">
+                        <h3>我的订单</h3>
+                        <a href="https://www.vmall.com/member/order?t=1557328064791">全部订单</a>
+                    </div>
+
+                    <div class="mc-user-portal" style="width: 600px; margin: 0 auto">
+                        <ul class="clearfix" style="margin: 0 auto; width: 600px">
+                            <li class="portal-icon-1 disabled">
+                                <a href=""><span
+                                        id="un_payment"></span>待付款</a>
+                                <span id="un_payment_wechat" style="display: none;"></span>
+                            </li>
+                            <li class="portal-icon-2 disabled" style="margin-left: 125px">
+                                <a href=""><span
+                                        id="un_received"></span>待收货</a>
+                                <span id="un_received_wechat" style="display: none;"></span>
+                            </li>
+                            <li class="portal-icon-3 disabled" style="margin-left: 125px">
+                                <a href=""><span
+                                        id="un_remark"></span>待评价</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mc-order-list">
+                        <ul id="order-list">
+                            <li class="clearfix" style="width : 750px; margin: 0 auto">
+                                <div class="p-img-list">
+                                    <div class="p-img"></div>
+                                </div>
+                                <div class="p-num">共14件商品</div>
+                                <div class="p-state">
+                                    待付款
+                                </div>
+                                <div class="p-price">¥1999.00</div>
+                                <div class="p-operate"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--我的商城-我的订单-end -->
+                <div class="hr-18"></div>
+            </div>
+            <div class="fr mc-right">
+
+            </div>
+        </div>
+        <div class="fl u-1-5">
+
+
+            <!-- 20170823-左边菜单-start -->
+            <div class="mc-menu-area">
+                <div class="h"><a href="https://www.vmall.com/member?t=1557328064792"><span>我的商城</span></a></div>
+                <div class="b">
+                    <ul>
+                        <li>
+                            <h3 class="icon-mc-order"><span>订单中心</span></h3>
+                            <ol>
+                                <li id="li-order"><a href="https://www.vmall.com/member/order?t=1557328064792"><span id="order">我的订单</span></a>
+                                </li>
+                                <li id="li-order-small" style="display: none;"></li>
+                                <li id="li-wait-pay-order"><a href="https://www.vmall.com/member/order?t=1557328064792"><span id="wait-pay-order">待支付订单<em>1</em></span></a>
+                                </li>
+                                <li id="li-wait-receive-order"><a href="https://www.vmall.com/member/order?t=1557328064792"><span id="wait-receive-order">待收货订单</span></a>
+                                </li>
+                                <li id="li-wait-evaluate-order"><a href="https://www.vmall.com/member/order?t=1557328064792"><span id="wait-evaluate-order">待评价订单</span></a>
+                                </li>
+
+
+                                <li id="li-prdRemark"><a
+                                        href="https://www.vmall.com/member/prdRemarkView?t=1557328064792"><span>商品评价</span></a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h3 class="icon-mc-support"><span>个人中心</span></h3>
+                            <ol>
+                                <li id="li-myInformation"><a
+                                        href="https://www.vmall.com/member/myAddress?t=1557328064792"><span>个人信息管理</span></a>
+                                </li>
+                                <li id="li-myAddress"><a
+                                        href="https://www.vmall.com/member/myAddress?t=1557328064792"><span>收货地址管理</span></a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h3 class="icon-mc-support"><span>我的资产</span></h3>
+                            <ol>
+                                <li id="li-mypoint"><a
+                                        href="https://www.vmall.com/member/myAddress?t=1557328064792"><span>我的积分</span></a>
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 20170823-左边菜单-end -->
+
+
+        </div>
+    </div>
+    <div class="hr-80"></div>
+    <div class="hr-80"></div>
+    <div class="hr-80"></div>
+    <div class="hr-80"></div>
+    <div class="hr-80"></div>
+    <div class="hr-80"></div>
+</div>
+
+
+<!--悬浮工具栏-start -->
+<div class="hungBar j-hungBar">
+    <div class="hungBar-content">
+        <a target="_blank"
+           class="hungBar-cart" title="购物车"><span style="display:none;"></span><i>购物车</i></a>
+        <a class="hungBar-top" title="返回顶部" id="hungBar-top"><i>返回顶部</i></a>
+    </div>
+</div>
+<!--悬浮工具栏-end -->
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+    // 初始化
+    $(function () {
+        // 初始化用户信息
+
+
+        // 初始化订单信息
+        $.ajax({
+            type: "get",
+            url: "http://localhost:8666/trade/getAllTrade/",
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    var tradeList = data.data;
+                    var waitPayNum = 0;
+                    var waitReceiveNum = 0;
+                    var waitValuateNum = 0;
+                    if (tradeList.length < 0) {
+                        // 无订单
+                        $(".mc-order-list").append("<div class=\"mc-order-empty\">\n" +
+                            "                            当前无近期订单，前往<a href=\"/homepage\">首页</a>选购吧～\n" +
+                            "                        </div>");
+                        return;
+                    }
+
+                    $(".mc-order-list").append("<ul id='order-list'></ul>");
+
+                    for (var i = 0; i < tradeList.length && i < 8; i++) {
+                        // 显示订单
+                        var trade = tradeList[i];
+                        var imgList = "";
+                        var operateList = "";
+                        var status = "";
+                        var total = 0;
+                        var tradeItemList = trade.tradeItemList;
+                        for (var j = 0; j < tradeItemList.length && j < 2; j++) {
+                            if (j < 2) {
+                                imgList += "<img src=\""+tradeItemList[i].skuImageUrl+"\">\n"
+                            }
+                            total += tradeItemList[i].quantity;
+                        }
+                        if (trade.status == 1) {
+                            // 待支付
+                            status = "待付款";
+                            waitPayNum++;
+                            var payHref = "/trade/cashRegister?tradeNo=" + trade.tradeNoString;
+                            operateList += "<a href=\""+payHref+"\" class=\"p-btn\" target=\"_blank\">去支付</a>";
+                        } else if (trade.status == 3) {
+                            // 待收货
+                            status = "待收货";
+                            waitReceiveNum++;
+                            var receiveHref = "";
+                            operateList += "<a href=\""+receiveHref+"\" class=\"p-btn\">确认收货</a>"
+                        } else if (trade.status == 4) {
+                            // 待评价
+                            status = "待评价";
+                            waitValuateNum++;
+                            var valuateHref = "";
+                            operateList += "<a href=\""+valuateHref+"\" class=\"p-btn\">评论晒单</a>"
+                        }
+                        var orderHref = "";
+                        operateList += "<a href=\""+orderHref+"\" class=\"p-link\">订单详情</a>";
+                        $("#order-list").append("<li class=\"clearfix\" style=\"width : 750px; margin: 0 auto\">\n" +
+                            "                                <div class=\"p-img-list\">\n" +
+                            "                                    <div class=\"p-img\">"+imgList+"</div>\n" +
+                            "                                </div>\n" +
+                            "                                <div class=\"p-num\">共"+total+"件商品</div>\n" +
+                            "                                <div class=\"p-state\">\n" +
+                            "                                    "+status+"\n" +
+                            "                                </div>\n" +
+                            "                                <div class=\"p-price\">¥"+trade.totalPrice+"</div>\n" +
+                            "                                <div class=\"p-operate\">"+operateList+"</div>\n" +
+                            "                            </li>");
+                    }
+
+                    // 显示数字
+                    var totalNum = waitPayNum + waitReceiveNum + waitValuateNum;
+                    if (totalNum != 0) {
+                        $("#order").html("我的订单<em>"+totalNum+"</em>");
+                    }
+                    if (waitPayNum != 0) {
+                        $("#wait-pay-order").html("待支付订单<em>"+waitPayNum+"</em>");
+                        $(".portal-icon-1").attr("class", "portal-icon-1");
+                        $("#un_payment_wechat").css("display", "block").append("<em>"+waitPayNum+"</em>");
+                    }
+                    if (waitReceiveNum != 0) {
+                        $("#wait-receive-order").html("待收货订单<em>"+waitReceiveNum+"</em>");
+                        $(".portal-icon-2").attr("class", "portal-icon-1");
+                        $("#un_received_wechat").css("display", "block").append("<em>"+waitPayNum+"</em>");
+                    }
+                    if (waitValuateNum != 0) {
+                        $("#wait-evaluate-order").html("待评价订单<em>"+waitValuateNum+"</em>");
+                        $(".portal-icon-3").attr("class", "portal-icon-1");
+                        $("#un_remark").css("display", "block").append("<em>"+waitPayNum+"</em>");
+                    }
+
+                }
+            }
+        });
+    });
+
+
+
+</script>
+
+</body>
+</html>

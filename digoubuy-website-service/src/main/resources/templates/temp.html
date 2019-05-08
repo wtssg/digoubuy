@@ -3,42 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>搜索</title>
-    <script src="/jquery/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <div>
-    <label><input type="button" id="button"></label>
-    <label><input type="text" id="search"></label>
-</div>
-<script type="text/javascript">
-    $(function () {
 
-        $('#button').click(function () {
-            var keyword = $('#search').val();
-            var url = "/product/search";
-            window.open(encodeURI(url + "?keyword=" + keyword));
+
+</div>
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    var href = window.location.href;
+    var tradeNo = decodeURI(href.substring(href.indexOf("tradeNo"),href.length));
+    tradeNo = tradeNo.substring(tradeNo.indexOf("=") + 1, tradeNo.length);
+    $(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8666/alipay/pay/" + tradeNo,
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    $("body").html(data.data);
+                }
+            }
         });
-        // $('#button').click(
-        //     search()
-        // );
-        // function search() {
-        //     $.ajax({
-        //         type:"POST",
-        //         url:"http://localhost:8666/product/search",
-        //         data:JSON.stringify({
-        //             "searchContent" : keyword
-        //         }),
-        //         contentType:"application/json",
-        //         dataType:"json",
-        //         success:function (data) {
-        //             if (data.message != "搜索产品成功") {
-        //                 search();
-        //             } else {
-        //                 $('#textarea').val("success" + data.code + keyword);
-        //             }
-        //         }
-        //     });
-        // }
     })
 </script>
 </body>

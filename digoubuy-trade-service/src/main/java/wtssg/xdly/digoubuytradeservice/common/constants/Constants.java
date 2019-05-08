@@ -24,4 +24,5 @@ public class Constants {
     /**redis缓存**/
     public static final String CACHE_PRODUCT_CATEGORY = "product:category";
     public static final String CACHE_PRODUCT_DETAIL = "product:detail";
+    public static final String CACHE_TEMP_ORDER = "order:temp";
 }

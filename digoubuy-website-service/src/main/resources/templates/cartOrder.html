@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>华为商城</title>
+
+    <link href="/css/app.a7cba1d.css" rel="stylesheet">
+    <link href="/css/loading.css" rel="stylesheet">
+    <!--<link href="/css/order/order.css" rel="stylesheet">-->
+</head>
+
+<body>
+<div id="app">
+    <div class="sc">
+
+        <div class="shortcut">
+            <div class="layout">
+                <div class="s-sub">
+                    <ul>
+                        <li><a href="https://www.vmall.com/" target="_blank">首页</a></li>
+
+                    </ul>
+                </div>
+                <div class="s-main s-main-no-minicart">
+                    <ul>
+                        <li>
+                            <div class="header-toolbar">
+                                <div class="s-dropdown">
+                                    <div class="h"><a href="https://www.vmall.com/member" rel="nofollow" target="_blank"
+                                                      class="icon-dropdown"><span>熄***园</span></a>&nbsp;
+                                    </div>
+                                    <div class="b">
+                                        <div class="dropdown-i-mall">
+                                            <div class="i-mall-prompt clearfix">
+                                                <div class="user-head fl"><p class="user-img"><a
+                                                        href="https://www.vmall.com/member" rel="nofollow"
+                                                        timetype="timestamp" target="_blank"><img
+                                                        src="./购物车_files/b.0260086000248159971.20180328210934.14861712484332861995911313739957.1000.AB7BE1785B852A081BD1414C526AECDE9293DD234403769EF9DD7733B6A0B4C2.jpg"
+                                                        alt="用户头像" id="customerPic"></a></p></div>
+                                                <div class="user-info fl">
+                                                    <div id="user-vip-level-tips-index"
+                                                         class="user-level icon-vip-level-1"><em></em>
+                                                        <p><span id="canvas-index" style="width: 12%;"></span></p></div>
+                                                    <div id="vip-info" class="user-info-detail clearfix"><a
+                                                            id="authentication_y" class="icon-realname">已实名</a> <a
+                                                            href="https://www.vmall.com/member/msg" rel="nofollow"
+                                                            timetype="timestamp" class="icon-mail">消息(<span
+                                                            id="top-newMsgCount">0</span>)</a></div>
+                                                </div>
+                                            </div>
+                                            <div class="i-mall-uc">
+                                                <dl class="clearfix">
+                                                    <dt><span class="fl">我的订单</span><a
+                                                            href="https://www.vmall.com/member/order"
+                                                            timetype="timestamp" class="fr">更多</a></dt>
+                                                </dl>
+                                                <div class="i-mall-uc-con">
+                                                    <dl class="clearfix">
+                                                        <dd><a href="https://www.vmall.com/member/order?tab=unpaid"
+                                                               timetype="timestamp">待支付</a></dd>
+                                                        <dd><a href="https://www.vmall.com/member/order?tab=send"
+                                                               timetype="timestamp">待收货</a></dd>
+                                                        <dd><a href="https://www.vmall.com/member/order?tab=nocomment"
+                                                               timetype="timestamp">待评价</a></dd>
+                                                        <dd><a href="https://www.vmall.com/member/exchange?"
+                                                               timetype="timestamp">退换货</a></dd>
+                                                        <dd>
+                                                            <a href="https://www.vmall.com/member/recycle/index/aihuishou"
+                                                               timetype="timestamp">旧机回收</a></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                            <div class="i-mall-huaban">
+                                                <ul class="clearfix">
+                                                    <li><a href="https://www.vmall.com/member/newpoint" target="_blank"
+                                                           id="point"><p class="p-price"><span
+                                                            id="userPointBalance">-- </span></p>
+                                                        <p class="p-dec">积分</p></a></li>
+                                                    <li><a href="https://www.vmall.com/member/coupon" rel="nofollow"
+                                                           target="_blank"><p class="p-price"><span
+                                                            id="top-couponCount">-- </span></p>
+                                                        <p class="p-dec">优惠券</p></a></li>
+                                                    <li><a href="https://www.vmall.com/member/balance" rel="nofollow"
+                                                           target="_blank"><p class="p-price"><span id="balanceAmount">-- </span>
+                                                    </p>
+                                                        <p class="p-dec">代金券</p></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="i-out"><a href="https://www.vmall.com/account/logout"
+                                                                  rel="nofollow">退出登录</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="hide"></li>
+                        <li><a href="https://www.vmall.com/member/order" timetype="timestamp" target="_blank">我的订单</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!----></div>
+        <div class="header order-header">
+            <div class="layout">
+                <div class="left">
+                    <!-- 2017-06-19-logo-文字-start -->
+                    <div class="logo logo-word">
+                        <span>确认订单</span>
+                    </div>
+                    <!-- 2017-06-19-logo-文字-end -->
+                </div>
+
+                <div class="right">
+                    <!--头部 -->
+                    <!-- <div class="order-header">
+                        <div class="fr"> -->
+                    <!--步骤-两步骤 -->
+                    <div class="progress-area progress-area-2">
+                        <!--核对订单 -->
+                        <div id="progress-confirm" class="progress-co-area hide" style="display: block;">填写核对订单信息</div>
+                        <!--成功提交订单 -->
+                        <div id="progress-submit" class="progress-sso-area hide">成功提交订单</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="layout "><!----> <!---->
+            <div class="hr-20" id="order-address-hr"></div>
+            <div class="order-detail-area order-address" id="order-address-mod">
+                <div class="h">
+                    收货地址
+                    <a id="upAddAddressButton" class="address-add-btn" onclick="addressAddBtn()"
+                       style="display: none;">新增收货地址</a>
+                </div>
+                <div class="order-address-list" >
+                    <ul class="clearfix" id="order-address-list">
+                        <!--<li id="myAddress-69036850" class="current">-->
+
+                        <!--<span class="address-status">默认地址</span>-->
+                        <!--<div class="address-main" onclick="ec.order.myAddress.select(this);">-->
+                        <!--<p class="clearfix">-->
+                        <!--<b class="name">wtsg</b>-->
+                        <!--<span class="tel">18838981005</span>-->
+                        <!--</p>-->
+                        <!--<div class="address-detail">河南&nbsp;郑州&nbsp;金水区&nbsp;人民路街道&nbsp;123</div>-->
+                        <!--</div>-->
+                        <!--<div class="address-sub">-->
+                        <!--<a class="address-edit">编辑</a>-->
+                        <!--<a class="address-del">删除</a>-->
+                        <!--<a class="address-default hide">设为默认</a>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--<li id="myAddress-69036704">-->
+                        <!--<span class="address-status hide">默认地址</span>-->
+                        <!--<div class="address-main">-->
+                        <!--<p class="clearfix">-->
+                        <!--<b class="name">wt</b>-->
+                        <!--<span class="tel">18838981005</span>-->
+                        <!--</p>-->
+                        <!--<div class="address-detail">河南&nbsp;郑州&nbsp;中原区&nbsp;中原西路街道&nbsp;123</div>-->
+                        <!--</div>-->
+                        <!--<div class="address-sub">-->
+                        <!--<a class="address-edit">编辑</a>-->
+                        <!--<a class="address-del">删除</a>-->
+                        <!--<a class="address-default">设为默认</a>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--<li id="address-empty">-->
+                        <!--<div class="address-empty"><a class="address-add-btn">新增收货地址</a></div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <div class="f">
+                    <div id="address-more">
+                        <a class="address-expand hide" style="display: none;" onclick="allAddress()">查看全部地址</a>
+                        <!--收缩class="address-shrink"-->
+                        <a class="address-shrink hide" style="display: none;" onclick="shrinkAddress()">收起地址</a>
+                    </div>
+                </div>
+                <input name="orderDistrict" id="order-district" type="hidden">
+            </div>
+            <div class="hr-20"></div>
+            <div class="sc-list">
+                <div class="sc-pro-title clearfix"><label class="checkbox" style="height: 40px"></label>
+                    <ul class="clearfix">
+                        <li>商品</li>
+                        <li>单价</li>
+                        <li>数量</li>
+                        <li>小计</li>
+                    </ul>
+                </div>
+                <form id="cart-form" autocomplete="off" method="get">
+                    <div class="sc-pro">
+
+                    </div>
+                </form>
+            </div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div id="total_tool"></div>
+
+            <div class="sc-total-fixed">
+                <div class="sc-total-tool layout clearfix ">
+                    <div class="sc-total-control"></div>
+                    <div class="sc-total-btn "><a>提交订单</a></div>
+                    <div class="sc-total-price"><p id="total-price"></p>
+                        <div class="total-choose"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ol_box_mask" style="visibility: hidden; z-index: 5000;"></div>
+<div class="loader" style="width: 100px; height : 64px; position: fixed; visibility: visible">
+    <div class="loader-inner ball-spin-fade-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!--<div class="b"><p>您确认要删除该地址吗？ </p>-->
+<!--<div class="popup-button-area"><a class="button-action-yes" id="button-action-yes"><span>是</span></a> <a-->
+<!--class="button-action-no" id="button-action-no"><span>否</span></a></div>-->
+<!--</div>-->
+<div id="myAddress-add-new-box" edit="0" address-id="0"  class="ol_box_4" style="visibility: hidden; position: fixed; z-index: 5000; width: 800px;">
+    <div class="box-ct">
+        <div class="box-header">
+            <div class="box-tl"></div>
+            <div class="box-tc">
+                <div class="box-tc1"></div>
+                <div class="box-tc2"><a title="关闭" class="box-close"></a><span class="box-title">添加地址</span></div>
+            </div>
+            <div class="box-tr"></div>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;background:#fff;">
+            <tbody>
+            <tr>
+                <td class="box-cc">
+                    <div class="box-content" style="height: auto;">
+                        <div id="order-address-add-area">
+                            <form id="myAddress-form">
+                                <div class="form-edit-panels">
+                                    <div class="form-edit-area">
+                                        <div class="form-edit-table form-edit-table-address">
+                                            <table cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <th><span class="required">*</span><label >收货人：</label></th>
+                                                    <td><input type="text" id="name" class="text vam span-574" maxlength="8" style="width: 90%; float: left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th><span class="required">*</span><label >手机号码：</label></th>
+                                                    <td><input type="number" id="tel" maxlength="11" class="text vam span-574" style="width: 90%; float: left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="vat" rowspan="2"><span class="required">*</span><label>收货地址：</label></th>
+                                                    <td class="relative">
+                                                        <div class="vam inline-block" style="width: 20%; float: left">
+                                                            <input type="text"  maxlength="10"
+                                                                   class="text  span-229 ime-disabled" value="" id="province" style="z-index: 1; width: 100%;">
+                                                        </div>
+                                                        <label class="vam" style="margin-left: 30px;margin-top: 8px;float: left">&nbsp;省&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                        <div class="vam inline-block" style="width: 20%; float: left">
+                                                            <input
+                                                                    type="text"  maxlength="10"
+                                                                    class="text  span-229 ime-disabled" value="" id="city" style="z-index: 1; width: 100%;">
+                                                        </div>
+                                                        <label class="vam" style="margin-left: 30px;margin-top: 8px;float: left">&nbsp;市&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                        <div class="vam inline-block" style="width: 20%; float: left">
+                                                            <input
+                                                                    type="text"  maxlength="10"
+                                                                    class="text  span-229 ime-disabled" value="" id="town" style="z-index: 1; width: 100%;">
+                                                        </div>
+                                                        <label class="vam" style="margin-left: 30px;margin-top: 8px;float: left">&nbsp;区/县&nbsp;</label>
+                                                    </td>
+                                                </tr>
+                                                <tr class="tr-rel">
+                                                    <td><textarea
+                                                            name="address" class="textarea span-574"
+                                                            id="detail-address" placeholder="请填写详细地址"
+                                                            style="z-index: 1; float: left; width: 90%" ></textarea>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-button"><a class="box-cancel"><span>取消</span></a><a
+                                        class="box-ok" onclick="addAddress(this)"><span>保存并使用</span></a></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="box-button" style="display: none;"><a class="box-cancel"><span>取消</span></a> <a
+                            class="box-ok" ><span>确定</span></a></div>
+                </td>
+                <td class="box-cr"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="box-bottom" style="">
+            <div class="box-bl"></div>
+            <div class="box-bc"></div>
+            <div class="box-br"></div>
+        </div>
+    </div>
+</div>
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        startLoading();
+        loadAddress();
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8666/trade/getCartItemSelected",
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    endLoading();
+                    var tradeItemList = data.data;
+                    for (var i = 0; i < tradeItemList.length; i++) {
+                        var tradeItem = tradeItemList[i];
+                        var href = "/product/productDetail?skuId=" + tradeItem.skuId + "&spuId=" + tradeItem.spuId;
+                        $("#cart-form").append("<div>\n" +
+                            "                            <div class=\"sc-pro-list clearfix\">\n" +
+                            "                                <label class=\"checkbox\" style='width: 25px; height: 25px'></label>\n" +
+                            "                                <div class=\"sc-pro-area\">\n" +
+                            "                                    <div class=\"sc-pro-main clearfix\"><a\n" +
+                            "                                            href=\""+href+"\" target=\"_blank\" class=\"p-img\"><img\n" +
+                            "                                            src=\""+tradeItem.imgUrl+"\"></a>\n" +
+                            "                                        <ul>\n" +
+                            "                                            <li><a href=\""+tradeItem+"\"\n" +
+                            "                                                   target=\"_blank\" class=\"p-name\">\n" +
+                            "                                                "+tradeItem.skuName+"</a>\n" +
+                            "                                            </li>\n" +
+                            "                                            <li><div class=\"p-price\" ><span>¥&nbsp;"+tradeItem.skuPrice+"</span></div></li>\n" +
+                            "                                            <li>\n" +
+                            "                                                <div class=\"p-stock\" value=\"tradeItem.quantity\">\n" +
+                            "                                                    ×&nbsp;"+tradeItem.skuNum+"\n" +
+                            "                                                </div>\n" +
+                            "                                            </li>\n" +
+                            "                                            <li class=\"p-price-total\" value=\""+tradeItem.skuPrice * tradeItem.skuNum+"\">¥&nbsp;"+tradeItem.skuPrice * tradeItem.skuNum+"</li>\n" +
+                            "                                        </ul>\n" +
+                            "                                    </div>\n" +
+                            "                                </div>\n" +
+                            "                            </div>\n" +
+                            "                        </div>");
+                    }
+                    changeTotalPrice();
+                } else if (data.message == "订单过期") {
+                    alert("订单过期");
+                    window.location.href = "/homepage";
+                }
+            }
+        })
+    });
+
+    // 加载地址
+    function loadAddress() {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:7006/user/getUserAddressList",
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    var addressList = data.data;
+                    var defaultAddressIndex = 0;
+                    if (addressList.length != 0) {
+                        for (var i = 0; i < addressList.length; i++) {
+                            if (addressList[i].defaultFlag == 1) {
+                                defaultAddressIndex = i;
+                                break;
+                            }
+                        }
+                        var userAddress = addressList[defaultAddressIndex];
+                        var name =userAddress.name;
+                        var tel = userAddress.tel;
+                        var address = userAddress.province + "&nbsp;" + userAddress.city + "&nbsp;" +
+                            userAddress.town + "&nbsp;" + userAddress.address;
+                        $("#order-address-list").append("<li id=\""+userAddress.id+"\" class=\"current\" style='display: none' onclick='selectAddress(this)'>\n" +
+                            "\n" +
+                            "                            <span class=\"address-status\" id='default-address'>默认地址</span>\n" +
+                            "                            <div class=\"address-main\">\n" +
+                            "                                <p class=\"clearfix\">\n" +
+                            "                                    <b class='name'>"+name+"</b>\n" +
+                            "                                    <span class='tel'>"+tel+"</span>\n" +
+                            "                                </p>\n" +
+                            "                                <div class=\"address-detail\">"+address+"</div>\n" +
+                            "                            </div>\n" +
+                            "                            <div class=\"address-sub\">\n" +
+                            "                                <a class=\"address-edit\" onclick='editAddress(this)'>编辑</a>\n" +
+                            "                                <a class=\"address-del\" onclick='delAddress(this)'>删除</a>\n" +
+                            "                                <a class=\"address-default hide\" onclick='defaultAddress(this)'>设为默认</a>\n" +
+                            "                            </div>\n" +
+                            "                        </li>");
+                        for (var i = 0; i < addressList.length; i++) {
+                            if (i != defaultAddressIndex) {
+                                userAddress = addressList[i];
+                                name =userAddress.name;
+                                tel = userAddress.tel;
+                                address = userAddress.province + "&nbsp;" + userAddress.city + "&nbsp;" +
+                                    userAddress.town + "&nbsp;" + userAddress.address;
+                                $("#order-address-list").append("<li id=\""+userAddress.id+"\" style='display: none' onclick='selectAddress(this)'>\n" +
+                                    "                            <span class=\"address-status hide\">默认地址</span>\n" +
+                                    "                            <div class=\"address-main\">\n" +
+                                    "                                <p class=\"clearfix\">\n" +
+                                    "                                    <b class=\"name\">"+name+"</b>\n" +
+                                    "                                    <span class=\"tel\">"+tel+"</span>\n" +
+                                    "                                </p>\n" +
+                                    "                                <div class=\"address-detail\">"+address+"</div>\n" +
+                                    "                            </div>\n" +
+                                    "                            <div class=\"address-sub\">\n" +
+                                    "                                <a class=\"address-edit\" onclick='editAddress(this)'>编辑</a>\n" +
+                                    "                                <a class=\"address-del\" onclick='delAddress(this)'>删除</a>\n" +
+                                    "                                <a class=\"address-default\" onclick='defaultAddress(this)'>设为默认</a>\n" +
+                                    "                            </div>\n" +
+                                    "                        </li>");
+                            }
+                        }
+                    }
+                    $("#order-address-list")
+                        .append("<li id=\"address-empty\" style='display: none'>\n" +
+                            "                            <div class=\"address-empty\"><a class=\"address-add-btn\" onclick='addressAddBtn()'>新增收货地址</a></div>\n" +
+                            "                        </li>");
+                    reAddress();
+                }
+            }
+        });
+    }
+
+
+    // 提交订单
+    $(".sc-total-btn").click(function () {
+        if ($(".current") == null) {
+            alert("未选择派送地址，无法下单");
+            return;
+        }
+        startLoading();
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8666/trade/orderByCart/" + $(".current").attr("id"),
+            dataType: "json",
+            success: function (data) {
+                endLoading();
+                if (data.code == 200) {
+                    var tradeNo = data.data.tradeNoString;
+                    window.location.href = "/trade/cashRegister?id=" + tradeNo;
+                } else if (data.message == "订单过期") {
+                    alert("订单过期");
+                    window.location.href = "/homepage";
+                }
+            }
+        });
+    });
+
+    // 选择地址
+    function selectAddress(element1) {
+        if ($(element1).attr("class") != "current") {
+            $(".current").removeAttr("class");
+            $(element1).attr("class", "current");
+        }
+    }
+
+    // 增加或者编辑地址
+    function addAddress() {
+        startLoading();
+        var name = $("#name").val();
+        var tel = $("#tel").val();
+        var province = $("#province").val();
+        var city = $("#city").val();
+        var town = $("#town").val();
+        var address = $("#detail-address").val();
+        var defaultFlag = 0;
+        if ($("#myAddress-add-new-box").attr("edit") == 1) {
+            // 编辑地址
+            $("#myAddress-add-new-box").attr("edit", "0");
+            var id = $("#myAddress-add-new-box").attr("address-id");
+            if ($("#" + id).find("#default-address").length != 0) {
+                defaultFlag = 1;
+            }
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:7006/user/updateUserAddress",
+                data: JSON.stringify({
+                    "id": parseInt(id),
+                    "name": name,
+                    "tel": tel,
+                    "province": province,
+                    "city": city,
+                    "town": town,
+                    "address": address,
+                    "defaultFlag" : defaultFlag
+                }),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (data) {
+                    endLoading();
+                    if (data.code == 200) {
+                        var userAddress = $("#" + id);
+                        var newAddress = province + "&nbsp;" + city + "&nbsp;" + town + "&nbsp;" + address;
+                        userAddress.find(".name").html(name);
+                        userAddress.find(".tel").html(tel);
+                        userAddress.find(".address-detail").html(newAddress);
+                        userAddress.attr("id" , data.data);
+                    }
+                }
+            });
+        } else {
+            // 增加地址
+            if ($("#order-address-list").find("li").length == 1) {
+                defaultFlag = 1;
+            }
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:7006/user/addUserAddress",
+                data: JSON.stringify({
+                    "name" : name,
+                    "tel" : tel,
+                    "province" : province,
+                    "city" : city,
+                    "town" : town,
+                    "address" : address,
+                    "defaultFlag" : defaultFlag
+                }),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (data) {
+                    endLoading();
+                    if (data.code == 200) {
+                        var id = data.data;
+                        var clazz = "address-status hide";
+                        if (defaultFlag == 1) {
+                            clazz = "address-status";
+                        }
+                        address = province + "&nbsp;" + city + "&nbsp;" + town + "&nbsp;" + address;
+                        $("#order-address-list").find(".current").removeAttr("class");
+                        $("#order-address-list").prepend("<li id=\""+id+"\" class=\"current\" style='display: none' onclick='selectAddress(this)'>\n" +
+                            "\n" +
+                            "                            <span class=\""+clazz+"\" id='default-address'>默认地址</span>\n" +
+                            "                            <div class=\"address-main\">\n" +
+                            "                                <p class=\"clearfix\">\n" +
+                            "                                    <b class='name'>"+name+"</b>\n" +
+                            "                                    <span class='tel'>"+tel+"</span>\n" +
+                            "                                </p>\n" +
+                            "                                <div class=\"address-detail\">"+address+"</div>\n" +
+                            "                            </div>\n" +
+                            "                            <div class=\"address-sub\">\n" +
+                            "                                <a class=\"address-edit\" onclick='editAddress(this)'>编辑</a>\n" +
+                            "                                <a class=\"address-del\" onclick='delAddress(this)'>删除</a>\n" +
+                            "                                <a class=\"address-default\" onclick='defaultAddress(this)'>设为默认</a>\n" +
+                            "                            </div>\n" +
+                            "                        </li>");
+                        reAddress();
+                    }
+                }
+            });
+        }
+        closeAddAddress();
+        $("#name").val("");
+        $("#tel").val("");
+        $("#province").val("");
+        $("#city").val("");
+        $("#town").val("");
+        $("#detail-address").val("");
+    }
+
+    // 删除地址
+    function delAddress(element) {
+        startLoading();
+        event.stopPropagation();
+        var userAddress = $(element).parents("li");
+        var id = userAddress.attr("id");
+        var flag = (userAddress.find("#default-address").length == 1);
+        var flag2 = (userAddress.attr("class") == "current");
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:7006/user/remUserAddress/" + id,
+            dataType: "json",
+            success: function (data) {
+                endLoading();
+                if (data.code == 200) {
+                    $(element).parents("li").remove();
+                    var size = $("#order-address-list").find("li").length;
+                    if (size <= 4) {
+                        reAddress();
+                    }
+                    if (flag2) {
+                        // 选中地址被删除
+                        $($("#order-address-list").find("li").get(0)).attr("class", "current");
+                    }
+                    if (flag) {
+                        // 默认地址被删除
+                        $(".current").find(".address-default").attr("id", "default-address").click();
+                    }
+                }
+            }
+        });
+    }
+
+    // 默认地址
+    function defaultAddress(element) {
+        startLoading();
+        event.stopPropagation();
+        var oldDefault = $("#default-address").parents("li").attr("id");
+        var newDefault = $(element).parents("li").attr("id");
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:7006/user/setDefaultAddress/" + oldDefault + "/" + newDefault,
+            dataType: "json",
+            success: function (data) {
+                endLoading();
+                if (data.code == 200) {
+                    $(element).parents("li").find(".address-status").attr("class", "address-status");
+                    $(element).parents("li").find(".address-default").attr("class", "address-default hide");
+                    $("#default-address").parents("li").find(".address-default").attr("class", "address-default");
+                    $("#default-address").attr("class", "address-status hide").removeAttr("id");
+                    $(element).parents("li").find(".address-status").attr("id", "default-address");
+
+                }
+            }
+        });
+    }
+
+    // 编辑地址
+    function editAddress(element) {
+        event.stopPropagation();
+        var userAddress = $(element).parents("li");
+        var address = userAddress.find(".address-detail").html().split("&nbsp;");
+
+        $("#name").val(userAddress.find(".name").html());
+        $("#tel").val(userAddress.find(".tel").html());
+        $("#province").val(address[0]);
+        $("#city").val(address[1]);
+        $("#town").val(address[2]);
+        $("#detail-address").val(address[3]);
+        $("#myAddress-add-new-box").attr("edit", "1").attr("address-id", userAddress.attr("id"));
+        addressAddBtn();
+    }
+
+    // 重排地址
+    function reAddress() {
+        var size = $("#order-address-list").find("li").length;
+        if (size > 4) {
+            $(".address-expand").css("display", "block");
+            $(".address-shrink").css("display", "none");
+        } else {
+            $(".address-expand").css("display", "none");
+            $(".address-shrink").css("display", "none");
+        }
+        if (size > 3) {
+            $("#upAddAddressButton").css("display", "block");
+            $("#order-address-list").find("li").each(function (index, element) {
+                if (index > 2) {
+                    $(element).css("display", "none");
+                } else {
+                    $(element).css("display", "block");
+                }
+            })
+        } else {
+            $("#upAddAddressButton").css("display", "none");
+            $("#order-address-list").find("li").each(function () {
+                $(this).css("display", "block");
+            })
+        }
+    }
+
+    // 显示全部地址，地址菜单下拉
+    function allAddress() {
+        $(".address-expand").css("display", "none");
+        $("#order-address-list").find("li").each(function () {
+            if ($(this).attr("id") != "address-empty") {
+                $(this).css("display", "block");
+            }
+        });
+        $(".address-shrink").css("display", "block");
+    }
+
+    // 地址菜单收缩
+    function shrinkAddress() {
+        $("#order-address-list").find("li").each(function (index, element) {
+            if (index > 2 && $(element).attr("class")== "current") {
+                var clone = $(element).clone();
+                $(element).remove();
+                $("#order-address-list").prepend(clone);
+            }
+        });
+        reAddress();
+    }
+
+
+    // 地址编辑框
+    function addressAddBtn() {
+        var width = $(window).width();
+        var height = $(window).height();
+        $(".ol_box_mask").css("visibility", "visible").css("width", width).css("height", height).css("background-color", "black");
+        $(".ol_box_4").css("visibility", "visible")
+            .css("left", width / 2 - $(".ol_box_4").width() / 2)
+            .css("top", height / 2 - $(".ol_box_4").height() / 2);
+    }
+
+    $(".box-cancel").click(function () {
+        closeAddAddress();
+    });
+    $(".box-close").click(function () {
+        closeAddAddress();
+    });
+
+    function closeAddAddress() {
+        $(".ol_box_mask").css("visibility", "hidden");
+        $(".ol_box_4").css("visibility", "hidden");
+    }
+
+    function changeTotalPrice() {
+        var totalPrice = 0;
+        var point = 0;
+        $(".sc-pro-list").each(function () {
+            var price = $(this).find(".p-price-total").attr("value");
+            totalPrice += parseInt(price);
+        });
+        point = parseInt(totalPrice / 10);
+        $("#total-price").html("<p><label>应付金额：</label> <span>¥&nbsp; "+totalPrice+"</span></p>");
+        $(".total-choose").html("可获得积分<em>"+point+"</em>");
+    }
+
+    function startLoading() {
+        var height = $("body").height();
+        var width = $("body").width();
+        $(".ol_box_mask").css("visibility", "visible").css("width", width).css("height", height).css("background-color", "ghostwhite");
+        $(".loader").css("visibility", "visible").css("left", $(window).width() / 2 - $(".loader").width() / 2).css("top", $(window).height() / 2 - $(".loader").height() / 2);
+    }
+
+    function endLoading() {
+        $(".ol_box_mask").css("visibility", "hidden");
+        $(".loader").css("visibility", "hidden");
+    }
+
+</script>
+
+</body>
+</html>

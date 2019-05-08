@@ -1,4 +1,4 @@
-package wtssg.xdly.digoubuyuserservice.sms;
+package wtssg.xdly.digoubuyschedulerservice.sms;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -6,10 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-import wtssg.xdly.digoubuyuserservice.common.constants.Constants;
-import wtssg.xdly.digoubuyuserservice.common.utils.HttpUtil;
-import wtssg.xdly.digoubuyuserservice.common.utils.MD5Util;
-
+import wtssg.xdly.digoubuyschedulerservice.common.constants.Constants;
+import wtssg.xdly.digoubuyschedulerservice.common.utils.HttpUtil;
+import wtssg.xdly.digoubuyschedulerservice.common.utils.MD5Util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -44,7 +43,7 @@ public class MiaoDiSmsSender implements SmsSender {
             if(!jsonObject.getString("respCode").equals("00000")){
                 log.error("fail to send sms to "+phone+":"+params+":"+result);
             } else {
-                redisTemplate.opsForValue().set(phone, params, 30, TimeUnit.MINUTES);
+                redisTemplate.opsForValue().set(Constants.AUTH_CODE + phone, params, 30, TimeUnit.MINUTES);
             }
         } catch (Exception e) {
             log.error("fail to send sms to "+phone+":"+params);

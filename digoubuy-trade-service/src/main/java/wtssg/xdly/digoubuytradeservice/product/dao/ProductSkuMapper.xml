@@ -18,10 +18,17 @@
     select 
     <include refid="Base_Column_List" />
     from t_sku
-    where id = in
+    where id in
     <foreach collection="skuIdSet" index="index" item="item" open="(" separator="," close=")">
       #{item}
     </foreach>
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_sku
+    where id = #{id,jdbcType=BIGINT}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">

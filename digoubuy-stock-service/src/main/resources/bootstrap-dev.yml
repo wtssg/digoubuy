@@ -18,6 +18,6 @@ sharding:
         username: root
         password: 037b6d7f97f0
 
-zk:
-  host: ${zookeeper.host}
 
+kafka:
+  node: ${kafka.brokers.host}

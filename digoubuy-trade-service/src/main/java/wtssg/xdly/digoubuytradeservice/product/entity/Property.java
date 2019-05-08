@@ -7,15 +7,12 @@ import java.util.Date;
 
 @Data
 public class Property implements Serializable {
-
     private Long id;
-
-    private Long categoryId;
 
     private String propertyName;
 
-    private transient Date createTime;
+    private Date createTime;
 
-    private transient Date updateTime;
+    private Date updateTime;
 
 }

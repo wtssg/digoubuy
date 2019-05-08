@@ -5,9 +5,19 @@ spring:
         binder:
           brokers: ${kafka.brokers.host}
           auto-create-topics: true
+      bindings:
+        input:
+          destination: sms_topic
+          group: group
+  redis:
+    host: 106.13.83.153
+    port: 6379
+
+
+
   datasource:
     stock:
-      url: jdbc:mysql://119.23.106.180:3306/digou-buy-stock
+      jdbcUrl: jdbc:mysql://119.23.106.180:3306/digou-buy-stock
       username: root
       password: 037b6d7f97f0
 
@@ -20,3 +30,11 @@ stockJob:
   cron: 0/5 * * * * ?
   shardingTotalCount: 1
   shardingItemParameters: 0=Zhengzhou
+
+
+redis:
+  node: ${redis.host}
+
+zk:
+  host: ${zookeeper.host}
+

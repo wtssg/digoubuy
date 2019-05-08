@@ -5,6 +5,8 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="trade_no" jdbcType="BIGINT" property="tradeNo" />
     <result column="user_uuid" jdbcType="BIGINT" property="userUuid" />
+    <result column="address_id" jdbcType="BIGINT" property="addressId" />
+    <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
     <result column="payment" jdbcType="DECIMAL" property="payment" />
     <result column="paymeny_type" jdbcType="TINYINT" property="paymenyType" />
     <result column="status" jdbcType="TINYINT" property="status" />
@@ -12,10 +14,32 @@
     <result column="close_time" jdbcType="TIMESTAMP" property="closeTime" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <collection property="tradeItemList" resultMap="tradeItemMap"/>
+  </resultMap>
+  <resultMap id="tradeItemMap" type="wtssg.xdly.digoubuytradeservice.trade.entity.TradeItem">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_uuid" jdbcType="BIGINT" property="userUuid" />
+    <result column="trade_no" jdbcType="BIGINT" property="tradeNo" />
+    <result column="sku_id" jdbcType="BIGINT" property="skuId" />
+    <result column="sku_name" jdbcType="VARCHAR" property="skuName" />
+    <result column="sku_image_url" jdbcType="VARCHAR" property="skuImageUrl" />
+    <result column="current_price" jdbcType="DECIMAL" property="currentPrice" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, trade_no, user_uuid, payment, paymeny_type, status, payment_time, close_time, 
-    create_time, update_time
+    id, trade_no, user_uuid, address_id, total_price, payment, paymeny_type, status, 
+    payment_time, close_time, create_time, update_time
+  </sql>
+  <sql id="Trade_List">
+    t_trade.id, t_trade.trade_no, t_trade.address_id, t_trade.total_price,
+    t_trade.create_time, t_trade.update_time
+  </sql>
+  <sql id="Trade_Item_List">
+     t_trade_item.sku_id, t_trade_item.sku_name, t_trade_item.sku_image_url, t_trade_item.current_price,
+     t_trade_item.quantity, t_trade_item.total_price
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -23,27 +47,47 @@
     from t_trade
     where id = #{id,jdbcType=BIGINT}
   </select>
-
   <select id="selectByTradeNo"  resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from t_trade
-    where trade_no = #{out_trade_no}
+    where trade_no = #{tradeNo}
+  </select>
+  <select id="selectByTradeNoAndUuid"  resultMap="BaseResultMap">
+    select
+    <include refid="Trade_List" />,
+    t_trade_item.sku_id, t_trade_item.sku_name
+    from t_trade
+    left join t_trade_item on t_trade.trade_no = t_trade_item.trade_no
+    where t_trade.trade_no = #{tradeNo} and t_trade.user_uuid = #{uuid}
+  </select>
+
+  <select id="selectByUuid"  resultMap="BaseResultMap">
+    select
+    <include refid="Trade_List" />,
+    <include refid="Trade_Item_List" />,
+    from t_trade
+    left join t_trade_item on t_trade.trade_no = t_trade_item.trade_no
+    where t_trade.user_uuid = #{uuid} and t_trade.status != 2 and t_trade.status != 5
+    order by t_trade.update_time DESC
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_trade
     where id = #{id,jdbcType=BIGINT}
   </delete>
+
   <insert id="insert" parameterType="wtssg.xdly.digoubuytradeservice.trade.entity.Trade">
     insert into t_trade (id, trade_no, user_uuid,
-      payment, paymeny_type, status, 
-      payment_time, close_time, create_time, 
-      update_time)
+      address_id, total_price, payment, 
+      paymeny_type, status, payment_time, 
+      close_time, create_time, update_time
+      )
     values (#{id,jdbcType=BIGINT}, #{tradeNo,jdbcType=BIGINT}, #{userUuid,jdbcType=BIGINT}, 
-      #{payment,jdbcType=DECIMAL}, #{paymenyType,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
-      #{paymentTime,jdbcType=TIMESTAMP}, #{closeTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      #{addressId,jdbcType=BIGINT}, #{totalPrice,jdbcType=DECIMAL}, #{payment,jdbcType=DECIMAL}, 
+      #{paymenyType,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, #{paymentTime,jdbcType=TIMESTAMP}, 
+      #{closeTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="wtssg.xdly.digoubuytradeservice.trade.entity.Trade">
     insert into t_trade
@@ -56,6 +100,12 @@
       </if>
       <if test="userUuid != null">
         user_uuid,
+      </if>
+      <if test="addressId != null">
+        address_id,
+      </if>
+      <if test="totalPrice != null">
+        total_price,
       </if>
       <if test="payment != null">
         payment,
@@ -89,6 +139,12 @@
       <if test="userUuid != null">
         #{userUuid,jdbcType=BIGINT},
       </if>
+      <if test="addressId != null">
+        #{addressId,jdbcType=BIGINT},
+      </if>
+      <if test="totalPrice != null">
+        #{totalPrice,jdbcType=DECIMAL},
+      </if>
       <if test="payment != null">
         #{payment,jdbcType=DECIMAL},
       </if>
@@ -121,6 +177,12 @@
       <if test="userUuid != null">
         user_uuid = #{userUuid,jdbcType=BIGINT},
       </if>
+      <if test="addressId != null">
+        address_id = #{addressId,jdbcType=BIGINT},
+      </if>
+      <if test="totalPrice != null">
+        total_price = #{totalPrice,jdbcType=DECIMAL},
+      </if>
       <if test="payment != null">
         payment = #{payment,jdbcType=DECIMAL},
       </if>
@@ -149,6 +211,8 @@
     update t_trade
     set trade_no = #{tradeNo,jdbcType=BIGINT},
       user_uuid = #{userUuid,jdbcType=BIGINT},
+      address_id = #{addressId,jdbcType=BIGINT},
+      total_price = #{totalPrice,jdbcType=DECIMAL},
       payment = #{payment,jdbcType=DECIMAL},
       paymeny_type = #{paymenyType,jdbcType=TINYINT},
       status = #{status,jdbcType=TINYINT},

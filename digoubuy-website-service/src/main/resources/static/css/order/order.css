@@ -1,0 +1,27 @@
+.order-address .address-add-btn:before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    background-position: -24px 0;
+    position: relative;
+    top: 2px;
+    right: 8px;
+
+}
+
+.address-add-btn:before {
+    background: url(../../image/icon-order.png) no-repeat;
+}
+.order-address-list li {
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 360px;
+    height: 122px;
+    position: relative;
+}
+
+.order-address-list li.current {
+    background: url(../../image/btn-address.png) no-repeat;
+}

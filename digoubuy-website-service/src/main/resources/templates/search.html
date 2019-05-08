@@ -236,10 +236,10 @@
             <div id="search-pager" class="pager" style="visibility: visible">
                 <ul>
                     <li class="pgNext link first first-empty" onclick="search(0)">|&lt;</li>
-                    <li class="pgNext link pre pre-empty" onclick="search($('#currentPage').html() - 2)">&lt;</li>
+                    <li class="pgNext link pre pre-empty" onclick="if ($('#currentPage').html() - 2 >= 0) {search($('#currentPage').html() - 2)}">&lt;</li>
                     <span class="qpages" id="qpages">
                     </span>
-                    <li class="pgNext link next" onclick="search($('#currentPage').html())">&gt;</li>
+                    <li class="pgNext link next" id="next-page">&gt;</li>
                     <li class="pgNext link last" id="last-page">&gt;|</li>
 
                 </ul>
@@ -263,7 +263,7 @@
 <!--悬浮工具栏-end -->
 <script src="/jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-    var pageSize = 20;
+    var pageSize = 15;
     var url = location.href;
     var keyword = decodeURI(url.substring(url.indexOf("=")+1,url.length));
     $("#search-kw").val(keyword);
@@ -273,13 +273,15 @@
         $('title').html("商品搜索_" + keyword);
         $('#record-name').html("[" + keyword + "]");
         search(0);
-        // 排序
+        // 搜索条
         $("#search-bar").submit(function (event) {
             event.preventDefault();
             var keyword = $('#search-kw').val();
             var url = "/product/search";
             window.open(encodeURI(url + "?keyword=" + keyword));
         });
+
+        // 排序
         $('#sort-overAll').click(function () {
             $('#sort-overAll').attr("class", "selected");
             $('#sort-register_date').attr("class", "unselected");
@@ -313,6 +315,11 @@
             search(0);
         });
 
+    });
+
+    // 返回顶部
+    $("#hungBar-top").click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 500);
     });
 
     function search(pageNumber) {
@@ -351,7 +358,7 @@
                     // 动态生成商品展示
                     $('#pro-list').empty();
                     for (var i = 0; i < product.length; i++) {
-                        var href = "/product/productDetail?product_id=" + product[i].id;
+                        var href = "/product/productDetail?spuId=" + product[i].id;
 
                         $('#pro-list').append(
                             "<li>\n" +
@@ -381,6 +388,11 @@
                                 $('#qpages').append("<li class=\"page-number link\" onclick='search($(this).html() - 1)'>" + curPageNumber + "</li>");
                             }
                         }
+                        if ($('#currentPage').html() < curPageNumber) {
+                            $("#next-page").attr("onclick", "search(" + $('#currentPage').html()+")");
+                        } else {
+                            $("#next-page").removeAttr("onclick");
+                        }
                         $('#last-page').attr("onclick", "search(" + --curPageNumber + ")");
                     } else {
                         $('#search-pager').css("visibility", "hidden");
@@ -390,13 +402,7 @@
         });
     }
 
-
 </script>
 
-<script type="text/javascript">
-    $("#hungBar-top").click(function () {
-        $('html,body').animate({ scrollTop: 0 }, 500);
-    });
-</script>
 </body>
 </html>

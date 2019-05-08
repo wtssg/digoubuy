@@ -72,7 +72,7 @@
             </div>
 
             <div style="margin-top: 3px">
-                <span id="tel_error" style="color: red; font-size: 12px; margin-left: 30px; visibility: hidden">手机号码错误</span>
+                <span id="tel_error" style="color: red; font-size: 12px; margin-left: 30px; visibility: hidden">手机号码格式错误</span>
             </div>
 
             <!-- 验证码 -->
@@ -93,7 +93,8 @@
 
                     </label><input type="text" autocomplete="off" class="verify vam ime-disabled text" id="authCode"
                                    tabindex="3" style="vertical-align: middle; z-index: 1;" name="formBean.authCode"
-                                   maxlength="4"  placeholder="请输入短信验证码">
+                                   send="false"
+                                   maxlength="6"  placeholder="请输入短信验证码">
                 </div>
             </div>
 
@@ -117,7 +118,7 @@
             </div>
 
             <div style="margin-top: 3px">
-                <span id="nickname_error" style="color: red; font-size: 12px; margin-left: 30px; visibility: hidden">昵称错误</span>
+                <span id="nickname_error" style="color: red; font-size: 12px; margin-left: 30px; visibility: hidden">昵称长度不得小于4</span>
             </div>
 
             <!-- 设置密码 -->
@@ -136,7 +137,7 @@
                     </div>
                 </div>
                 <div style="margin-top: 3px">
-                    <span id="password_error" style="color: red; font-size: 12px; margin-left: 30px; visibility: hidden">密码错误</span>
+                    <span id="password_error" style="color: red; font-size: 12px; margin-left: 30px; visibility: hidden">密码长度不得小于8</span>
                 </div>
                 <div id="msg_password"></div>
                 <div id="pwd_check_dialog"></div>
@@ -177,45 +178,104 @@
             if (!(/^1[34578]\d{9}$/.test(tel))) {
                 $('#tel_error').css("visibility","visible");
             } else {
-                $('#tel_error').css("visibility","hidden");
                 $.get("http://localhost:7006/user/sendVerCode/" + tel);
+                $('#getValiCode').attr("send", "true");
                 time();
             }
         })
-        $('#btnSubmit').click(function () {
-            var tel = $('#username').val();
-            var authCode = $('#authCode').val();
-            var nickname = $('#nickname').val();
-            var password = $('#password').val();
-            var confirmPwd = $('#confirmPwd').val();
-            if (tel == '') {
-                $('#tel_error').css("visibility","visible");
-            } else {
-                $('#tel_error').css("visibility","hidden");
-                if (authCode == '') {
-                    $('#authCode_error').css("visibility","visible");
-                } else {
-                    $('#authCode_error').css("visibility","hidden");
-                    if (nickname == '') {
-                        $('#nickname_error').css("visibility","visible");
-                    } else {
-                        $('#nickname_error').css("visibility","hidden");
-                        if (password == '') {
-                            $('#password_error').css("visibility","visible");
-                        } else {
-                            $('#password_error').css("visibility","hidden");
-                            if (password != confirmPwd) {
-                                $('#checkPassword_error').css("visibility","visible");
-                            } else {
-                                $('#checkPassword_error').css("visibility","hidden");
-
-                            }
-                        }
+    });
+    $('#btnSubmit').click(function () {
+        var tel = $('#username').val();
+        var authCode = $('#authCode').val();
+        var nickname = $('#nickname').val();
+        var password = $('#password').val();
+        var confirmPwd = $('#confirmPwd').val();
+        if (tel == '') {
+            $('#tel_error').css("visibility","visible");
+        } else if (authCode == '') {
+            $('#authCode_error').css("visibility","visible");
+        } else if (nickname == '') {
+            $('#nickname_error').css("visibility","visible");
+        } else if (password == '') {
+            $('#password_error').css("visibility","visible");
+        } else if (password != confirmPwd) {
+            $('#checkPassword_error').css("visibility","visible");
+        }
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:7006/user/register",
+            data: JSON.stringify({
+                "password" : password,
+                "nickname" : nickname,
+                "mobile" : tel,
+                "verCode" : authCode
+            }),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (data) {
+                if (data.code != 200) {
+                    if (data.message == "用户手机号已存在") {
+                        $('#tel_error').css("visibility","visible").html("手机号已存在");
+                    } else if (data.message == "验证码错误") {
+                        $('#authCode_error').css("visibility","visible");
+                    } else if (data.message == "用户昵称已存在") {
+                        $('#nickname_error').css("visibility","visible").html("昵称已存在");
                     }
+                } else {
+                    // 注册成功
                 }
             }
         })
     });
+
+    $('#nickname').focus(function () {
+        $('#nickname_error').css("visibility","hidden").html("昵称长度不得小于4");
+    });
+    $('#nickname').blur(function () {
+        var nickname = $('#nickname').val();
+        if (nickname.length < 4) {
+            $('#nickname_error').css("visibility","visible");
+        }
+    });
+    $('#password').focus(function () {
+        $('#password_error').css("visibility","hidden").html("密码长度不得小于8");
+    });
+    $('#password').blur(function () {
+        var password = $('#password').val();
+        if (password.length < 8) {
+            $('#password_error').css("visibility","visible");
+        }
+    });
+    $('#confirmPwd').focus(function () {
+        $('#checkPassword_error').css("visibility","hidden");
+    });
+    $('#confirmPwd').blur(function () {
+        var password = $('#password').val();
+        var confirmPwd = $('#confirmPwd').val();
+        if (password != confirmPwd) {
+            $('#checkPassword_error').css("visibility","visible");
+        }
+    });
+    $("#authCode").focus(function () {
+        $('#authCode_error').css("visibility","hidden");
+    });
+    $("#authCode").blur(function () {
+        if ($('#authCode').val().length != 6) {
+            $('#authCode_error').css("visibility","visible");
+        }
+    });
+
+    $("#username").focus(function () {
+        $('#tel_error').css("visibility", "hidden").html("手机号码格式错误");
+    });
+    $("#username").blur(function () {
+        var tel = $('#username').val();
+        if (!(/^1[34578]\d{9}$/.test(tel))) {
+            $('#tel_error').css("visibility", "visible");
+        }
+    });
+
+
     function time() {
         if (wait == 0) {
             $('#getValiCode').removeAttr("disabled").val("获取验证码");

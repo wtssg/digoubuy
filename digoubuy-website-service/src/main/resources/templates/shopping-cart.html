@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>华为商城</title>
+
+    <link href="/css/app.a7cba1d.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="app">
+    <div class="sc">
+
+        <div class="shortcut">
+            <div class="layout">
+                <div class="s-sub">
+                    <ul>
+                        <li><a href="https://www.vmall.com/" target="_blank">首页</a></li>
+
+                    </ul>
+                </div>
+                <div class="s-main s-main-no-minicart">
+                    <ul>
+                        <li>
+                            <div class="header-toolbar">
+                                <div class="s-dropdown">
+                                    <div class="h"><a href="https://www.vmall.com/member" rel="nofollow" target="_blank"
+                                                      class="icon-dropdown"><span>熄***园</span></a>&nbsp;
+                                    </div>
+                                    <div class="b">
+                                        <div class="dropdown-i-mall">
+                                            <div class="i-mall-prompt clearfix">
+                                                <div class="user-head fl"><p class="user-img"><a
+                                                        href="https://www.vmall.com/member" rel="nofollow"
+                                                        timetype="timestamp" target="_blank"><img
+                                                        src="./购物车_files/b.0260086000248159971.20180328210934.14861712484332861995911313739957.1000.AB7BE1785B852A081BD1414C526AECDE9293DD234403769EF9DD7733B6A0B4C2.jpg"
+                                                        alt="用户头像" id="customerPic"></a></p></div>
+                                                <div class="user-info fl">
+                                                    <div id="user-vip-level-tips-index"
+                                                         class="user-level icon-vip-level-1"><em></em>
+                                                        <p><span id="canvas-index" style="width: 12%;"></span></p></div>
+                                                    <div id="vip-info" class="user-info-detail clearfix"><a
+                                                            id="authentication_y" class="icon-realname">已实名</a> <a
+                                                            href="https://www.vmall.com/member/msg" rel="nofollow"
+                                                            timetype="timestamp" class="icon-mail">消息(<span
+                                                            id="top-newMsgCount">0</span>)</a></div>
+                                                </div>
+                                            </div>
+                                            <div class="i-mall-uc">
+                                                <dl class="clearfix">
+                                                    <dt><span class="fl">我的订单</span><a
+                                                            href="https://www.vmall.com/member/order"
+                                                            timetype="timestamp" class="fr">更多</a></dt>
+                                                </dl>
+                                                <div class="i-mall-uc-con">
+                                                    <dl class="clearfix">
+                                                        <dd><a href="https://www.vmall.com/member/order?tab=unpaid"
+                                                               timetype="timestamp">待支付</a></dd>
+                                                        <dd><a href="https://www.vmall.com/member/order?tab=send"
+                                                               timetype="timestamp">待收货</a></dd>
+                                                        <dd><a href="https://www.vmall.com/member/order?tab=nocomment"
+                                                               timetype="timestamp">待评价</a></dd>
+                                                        <dd><a href="https://www.vmall.com/member/exchange?"
+                                                               timetype="timestamp">退换货</a></dd>
+                                                        <dd>
+                                                            <a href="https://www.vmall.com/member/recycle/index/aihuishou"
+                                                               timetype="timestamp">旧机回收</a></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                            <div class="i-mall-huaban">
+                                                <ul class="clearfix">
+                                                    <li><a href="https://www.vmall.com/member/newpoint" target="_blank"
+                                                           id="point"><p class="p-price"><span
+                                                            id="userPointBalance">-- </span></p>
+                                                        <p class="p-dec">积分</p></a></li>
+                                                    <li><a href="https://www.vmall.com/member/coupon" rel="nofollow"
+                                                           target="_blank"><p class="p-price"><span
+                                                            id="top-couponCount">-- </span></p>
+                                                        <p class="p-dec">优惠券</p></a></li>
+                                                    <li><a href="https://www.vmall.com/member/balance" rel="nofollow"
+                                                           target="_blank"><p class="p-price"><span id="balanceAmount">-- </span>
+                                                    </p>
+                                                        <p class="p-dec">代金券</p></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="i-out"><a href="https://www.vmall.com/account/logout"
+                                                                  rel="nofollow">退出登录</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="hide"></li>
+                        <li><a href="https://www.vmall.com/member/order" timetype="timestamp" target="_blank">我的订单</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!----></div>
+
+        <div class="header order-header">
+            <div class="layout">
+                <div class="left">
+                    <div class="logo logo-word"><span>我的购物车</span></div>
+                </div>
+                <div class="right">
+                    <div class="progress-area progress-area-3">
+                        <div id="progress-cart" class="progress-sc-area">我的购物车</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout "><!----> <!---->
+            <div class="hr-20"></div>
+            <div class="sc-empty" style="display: block"><span class="icon-minicart"></span>
+                <p>您的购物车里什么也没有哦~</p> <a href="/homepage">去逛逛</a></div>
+            <div class="sc-list" style="display: none">
+                <div class="sc-pro-title clearfix"><label class="checkbox"><input
+                                                                                  class="checked" id="all-checked1" onclick="allChecked(this)"> 全选</label>
+                    <ul class="clearfix">
+                        <li>商品</li>
+                        <li>单价</li>
+                        <li>数量</li>
+                        <li>小计</li>
+                        <li>操作</li>
+                    </ul>
+                </div>
+                <form id="cart-form" autocomplete="off" method="get">
+
+                </form>
+            </div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div class="hr-90"></div>
+            <div id="total_tool"></div>
+
+            <div class="sc-total-fixed" style="display: none">
+                <div class="sc-total-tool layout clearfix ">
+                    <div class="sc-total-control"><label class="checkbox"><input
+                                                                                 class="checked" id="all-checked2" onclick="allChecked(this)"> 全选</label> <a
+                            id="del-selected" onclick="remove(this)">删除</a></div>
+                    <div class="sc-total-btn "><a>立即结算</a></div>
+                    <div class="sc-total-price"><p id="total-price"></p>
+                        <div class="total-choose"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup-area" class="popup-area popup-define-area" style="display : none; position: absolute;" target="">
+    <div class="b"><p>您确认要删除该商品吗？ </p>
+        <div class="popup-button-area"><a class="button-action-yes" id="button-action-yes"><span>是</span></a> <a
+                 class="button-action-no" id="button-action-no"><span>否</span></a></div>
+    </div>
+    <div class="f"><s class="icon-arrow-down"></s></div>
+</div>
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8666/trade/getCartItem",
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    var shoppingCartItemList = data.data;
+                    for (var i = 0; i < shoppingCartItemList.length; i++) {
+                        var shoppingCartItem = shoppingCartItemList[i];
+                        var checkStatus = "checked";
+                        if (shoppingCartItem.checkStatus == 0) {
+                            $("#all-checked1").attr("class", "unchecked");
+                            $("#all-checked2").attr("class", "unchecked");
+                            checkStatus = "unchecked";
+                        }
+                        var href = "/product/productDetail?skuId=" + shoppingCartItem.skuId + "&spuId=" + shoppingCartItem.spuId;
+                        $("#cart-form").append("<div>\n" +
+                            "                            <div class=\"sc-pro-list clearfix\" id=\""+shoppingCartItem.id+"\"><label class=\"checkbox\"><input \n" +
+                            "                                                                                             class=\""+checkStatus+"\" onclick='checkbox(this)'>\n" +
+                            "                            </label>\n" +
+                            "                                <div class=\"sc-pro-area\">\n" +
+                            "                                    <div class=\"sc-pro-main clearfix\"><a\n" +
+                            "                                            href="+href+"\n" +
+                            "                                            target=\"_blank\" class=\"p-img\"><img\n" +
+                            "                                            src=\""+shoppingCartItem.imgUrl+"\"\n" +
+                            "                                            alt=\""+shoppingCartItem.skuName+"\"></a>\n" +
+                            "                                        <div class=\"tips-1 p-stock-tips\" style=\"display: none;\">限购件</div>\n" +
+                            "                                        <ul>\n" +
+                            "                                            <li><a href="+href+"\n" +
+                            "                                                   target=\"_blank\" title=\""+shoppingCartItem.skuName+"\" class=\"p-name\">\n" +
+                            "                                                <!---->\n" +
+                            "                                                "+shoppingCartItem.skuName+"</a> <!----> <!----></li>\n" +
+                            "                                            <li>\n" +
+                            "                                                <div class=\"p-price\"><span>¥&nbsp;"+shoppingCartItem.skuPrice+"</span> <!----></div>\n" +
+                            "                                            </li>\n" +
+                            "                                            <li>\n" +
+                            "                                                <div class=\"p-stock\">\n" +
+                            "                                                    <div class=\"p-stock-area\"><input type=\"number\" class=\"p-stock-text\" onblur='changeCartItemNum(this)' value=\""+shoppingCartItem.skuNum+"\">\n" +
+                            "                                                        <p class=\"p-stock-btn\"><a  class=\"\" onclick='addNum(this)'>+</a> <a\n" +
+                            "                                                                class=\"disabled\" onclick='decNum(this)'>−</a></p></div>\n" +
+                            "                                                </div>\n" +
+                            "                                            </li>\n" +
+                            "                                            <li class=\"p-price-total\" price=\""+shoppingCartItem.skuPrice+"\">¥&nbsp;"+shoppingCartItem.skuPrice*shoppingCartItem.skuNum+"\n" +
+                            "                                                <!----></li>\n" +
+                            "                                            <li><a seed=\"cart-item-del\" class=\"p-del\" onclick='remove(this)'>删除</a></li>\n" +
+                            "                                        </ul>\n" +
+                            "                                    </div>\n" +
+                            "                                </div>\n" +
+                            "                            </div>\n" +
+                            "                        </div>");
+                    }
+                    if (shoppingCartItemList.length != 0) {
+                        $(".sc-pro-area").each(function () {
+                            if ($(this).find(".p-stock-text").val() != 1) {
+                                $(this).find(".disabled").attr("class", "abled");
+                            }
+                        });
+                        changeTotalPrice();
+                        $(".sc-empty").css("display", "none");
+                        $(".sc-list").css("display", "block");
+                        $(".sc-total-fixed").css("display", "block");
+                    }
+                }
+            }
+        });
+    });
+
+    function remove(element) {
+        var top = $(element).offset().top - $("#popup-area").height() - 15;
+        var left = $(element).offset().left - $("#popup-area").width() / 2 - 15;
+        var target;
+        var a = $(this).attr("id");
+        if ($(element).attr("id") == "del-selected") {
+            target = "del-selected";
+        } else {
+            target = $(element).parents(".sc-pro-list").attr("id");
+        }
+        $("#popup-area").css("display", "block").css("top", top).css("left", left).attr("target", target);
+    }
+
+    $("#button-action-no").click(function () {
+        $("#popup-area").css("display", "none");
+    });
+
+    $("#button-action-yes").click(function () {
+        var idList = [];
+        $("#popup-area").css("display", "none");
+        if ($("#popup-area").attr("target") == "del-selected") {
+            var i = 0;
+            $(".sc-pro-list").find(".checked").each(function () {
+                idList[i++] = $(this).parents(".sc-pro-list").attr("id");
+            });
+        } else {
+            var id = $("#popup-area").attr("target");
+            idList[0] = id;
+        }
+        deleteDBCartItem(idList);
+    });
+
+    $(".sc-total-btn").click(function () {
+       window.location.href = "/trade/cartOrder";
+    });
+
+
+    function checkbox(element) {
+        var id = 0;
+        if ($(element).attr("class") == "checked") {
+            $(element).attr("class", "unchecked");
+            $("#all-checked1").attr("class", "unchecked");
+            $("#all-checked2").attr("class", "unchecked");
+            id = $(element).parent().parent().attr("id");
+            changeDBCartItemStatus(id, 0);
+        } else {
+            $(element).attr("class", "checked");
+            if ($("#cart-form").find(".unchecked").get(0) == null) {
+                $("#all-checked1").attr("class", "checked");
+                $("#all-checked2").attr("class", "checked");
+            }
+            id = $(element).parent().parent().attr("id");
+            changeDBCartItemStatus(id, 1);
+        }
+        changeTotalPrice();
+    }
+
+    function allChecked(element) {
+        if ($(element).attr("class") == "checked") {
+            $("#all-checked1").attr("class", "unchecked");
+            $("#all-checked2").attr("class", "unchecked");
+            $(".sc-pro-list").find(".checked").each(function () {
+                $(this).attr("class", "unchecked");
+                id = $(this).parent().parent().attr("id");
+                changeDBCartItemStatus(id, 0);
+            });
+        } else {
+            $("#all-checked1").attr("class", "checked");
+            $("#all-checked2").attr("class", "checked");
+            $(".sc-pro-list").find(".unchecked").each(function () {
+                $(this).attr("class", "checked");
+                id = $(this).parent().parent().attr("id");
+                changeDBCartItemStatus(id, 1);
+            });
+        }
+        changeTotalPrice();
+    }
+
+    function addNum(element) {
+        var cartItemNum = $(element).parent().prev();
+        var oldVal =  cartItemNum.val();
+        var newVal = parseInt(oldVal) + 1;
+        cartItemNum.val(newVal);
+        if (oldVal == 1) {
+            $(element).next().attr("class", "abled");
+        }
+        var totalPrice = $(element).parent().parent().parent().parent().next();
+        totalPrice.html("¥ " + totalPrice.attr("price") * newVal);
+        var id = $(element).parents(".sc-pro-list").attr("id");
+        changeDBCartItemNum(id, newVal);
+        changeTotalPrice();
+    }
+    function decNum(element) {
+        if ($(element).attr("class") != "disabled") {
+            var oldVal =  $(element).parent().prev().val();
+            var newVal = parseInt(oldVal) - 1;
+            $(element).parent().prev().val(newVal);
+            if (oldVal == 2) {
+                $(element).attr("class", "disabled");
+            }
+            var totalPrice = $(element).parent().parent().parent().parent().next();
+            totalPrice.html("¥ " + totalPrice.attr("price") * newVal);
+            var id = $(element).parents(".sc-pro-list").attr("id");
+            changeDBCartItemNum(id, newVal);
+            changeTotalPrice();
+        }
+    }
+    function changeCartItemNum(element) {
+        if ($(element).val() == "" || $(element).val() < 1) {
+            $(element).val(1);
+        }
+        if ($(element).val() == 1) {
+            $($(element).next().children().get(1)).attr("class", "disabled");
+        } else {
+            $($(element).next().children().get(1)).attr("class", "abled");
+        }
+        var totalPrice = $(element).parent().parent().parent().next();
+        totalPrice.html("¥ " + totalPrice.attr("price") * $(element).val());
+        var id = $(element).parents(".sc-pro-list").attr("id");
+        changeTotalPrice();
+        changeDBCartItemNum(id, $(element).val());
+    }
+
+    function changeDBCartItemNum(id, num) {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8666/trade/changeCartItem",
+            data: JSON.stringify({
+                "id" : id,
+                "skuNum" : num
+            }),
+            contentType: "application/json",
+            dataType: "json"
+        })
+    }
+
+    function changeDBCartItemStatus(id, status) {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8666/trade/changeCartItem",
+            data: JSON.stringify({
+                "id" : id,
+                "checkStatus" : status
+            }),
+            contentType: "application/json",
+            dataType: "json"
+        })
+    }
+
+    function deleteDBCartItem(idList) {
+        var idString = "";
+        for (var i = 0; i < idList.length; i++) {
+            idString += idList[i] + "&";
+        }
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8666/trade/delCartItems/" + idString,
+            success : function (data) {
+                if (data.code == 200) {
+                    for (var i = 0; i < idList.length; i++) {
+                        $("#" + idList[i]).remove();
+                    }
+                    if ($(".sc-list").find(".sc-pro-list").get(0) == null) {
+                        $(".sc-empty").css("display", "block");
+                        $(".sc-list").css("display", "none");
+                        $(".sc-total-fixed").css("display", "none");
+                    }
+                    changeTotalPrice();
+                }
+            }
+        });
+    }
+
+    function changeTotalPrice() {
+        var totalPrice = 0;
+        var totalNum = 0;
+        $(".sc-pro-list").each(function () {
+            var checked = $($(this).find("input").get(0)).attr("class");
+            if (checked == "checked") {
+                var num = parseInt($(this).find(".p-stock-text").val());
+                var price = $(this).find(".p-price-total").attr("price");
+
+                totalPrice += price * num;
+                totalNum += num;
+            }
+        });
+        $("#total-price").html("<p><label>总计：</label> <span>¥&nbsp; "+totalPrice+"</span></p>");
+        $(".total-choose").html("已选择<em>"+totalNum+"</em>件商品");
+    }
+
+</script>
+
+</body>
+</html>

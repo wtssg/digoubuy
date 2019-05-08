@@ -6,6 +6,8 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 
+import java.util.Arrays;
+
 @Configuration
 public class OrderKeyExpiredHandler {
 
@@ -15,7 +17,8 @@ public class OrderKeyExpiredHandler {
         listenerContainer.setConnectionFactory(redisConnectionFactory);
         listenerContainer.addMessageListener((message, listener)->{
             // 处理key过期事件的逻辑
-            System.out.println("---redis过期事件" + new String(message.getBody()));
+            Long tradeNo = Long.valueOf(Arrays.toString(message.getBody()));
+            System.out.println("---redis过期事件tradeNo" + tradeNo);
         }, new PatternTopic("__keyevent@0__:expired"));
         return listenerContainer;
     }

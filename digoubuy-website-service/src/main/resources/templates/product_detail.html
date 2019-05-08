@@ -1,10 +1,1013 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>商品详情</title>
-</head>
-<body>
 
+    <title></title>
+    <link rel="shortcut icon" href="https://www.vmall.com/favicon.ico">
+    <link href="/css/search/ec.core.base.min.css" rel="stylesheet" type="text/css">
+
+    <link href="/css/search/main.min.css" rel="stylesheet" type="text/css">
+
+    <link href="/css/search/main.min(1).css" rel="stylesheet" type="text/css">
+
+    <link href="/css/loading.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="wide detail">
+<div class="top-banner" id="top-banner-block"></div>
+<!--彩贝-start -->
+<div class="qq-caibei-bar hide" id="caibeiMsg">
+    <div class="layout">
+        <div class="qq-caibei-bar-tips" id="HeadShow"></div>
+        <div class="qq-caibei-bar-userInfo" id="ShowMsg"></div>
+    </div>
+</div>
+<!--彩贝-end -->
+
+<div class="shortcut">
+    <div class="layout">
+        <div class="s-sub">
+            <ul>
+                <li><a href="/homepage">首页</a></li>
+                <li class="s-hwep hide" id="li-enterprise-preferential"></li>
+            </ul>
+        </div>
+
+        <div class="s-main ">
+            <ul>
+
+                <li><a href="">个人主页</a></li>
+
+                <li class="s-hwep hide"></li>
+
+                <li><a href="">我的订单</a></li>
+
+
+                <li>
+                    <div class="s-dropdown s-dropdown-minicart">
+                        <div class="h h-wide" id="header-toolbar-minicart">
+                            <a href="" class="icon-minicart"
+                               rel="nofollow" target="blank">
+                                <span>购物车(<span id="header-cart-total">0</span>)</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--捷径栏-end -->
+
+<!--头部-start -->
+<div class="header">
+    <div class="layout">
+        <div class="left">
+            <!--logo-start -->
+            <div class="logo"><a href="/homepage" title="地狗商城"><img
+                    src="/image/x9a6U8WW0bhrA7u0FIlY.png" alt="地狗商城"></a></div>
+            <!--logo-end -->
+
+            <!--导航-start -->
+            <div class="naver">
+                <ul id="naver" class="clearfix">
+                    <li id="zxnav_0" data-id="0">
+                        <a href="https://www.vmall.com/list-36" target="_blank"><span>手机</span></a>
+                        <input id="zxnav_0_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_0_name" type="hidden" autocomplete="off" value="手机">
+                    </li>
+                    <li id="zxnav_1" data-id="1">
+                        <a href="https://www.vmall.com/list-40" target="_blank"><span>笔记本 &amp; 平板</span></a>
+                        <input id="zxnav_1_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_1_name" type="hidden" autocomplete="off" value="笔记本 &amp; 平板">
+                    </li>
+                    <li id="zxnav_2" data-id="2">
+                        <a href="https://www.vmall.com/list-59" target="_blank"><span>智能穿戴</span></a>
+                        <input id="zxnav_2_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_2_name" type="hidden" autocomplete="off" value="智能穿戴">
+                    </li>
+                    <li id="zxnav_3" data-id="3">
+                        <a href="https://www.vmall.com/list-43" target="_blank"><span>智能家居</span></a>
+                        <input id="zxnav_3_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_3_name" type="hidden" autocomplete="off" value="智能家居">
+                    </li>
+                    <li id="zxnav_4" data-id="4">
+                        <a href="https://www.vmall.com/list-54" target="_blank"><span>热销配件</span></a>
+                        <input id="zxnav_4_flag" type="hidden" autocomplete="off" value="yes">
+                        <input id="zxnav_4_name" type="hidden" autocomplete="off" value="热销配件">
+                    </li>
+                    <li id="zxnav_5" data-id="5">
+                        <a href="https://www.vmall.com/list-34" target="_blank"><span>增值服务&amp;其他</span></a>
+                        <input id="zxnav_5_flag" type="hidden" autocomplete="off" value="no">
+                        <input id="zxnav_5_name" type="hidden" autocomplete="off" value="增值服务&amp;其他">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right">
+            <!--搜索条-start-->
+            <div class="search-bar relative" id="searchBar-area">
+                <div class="search-bar-form" id="search-bar-form">
+                    <form id="search-bar">
+                        <input type="text" class="text" maxlength="200" id="search-kw" autocomplete="off">
+                        <input type="submit" class="button iconfont" value="">
+                    </form>
+                </div>
+
+                <div class="autocomplete-w1">
+                    <div class="autocomplete" id="Autocomplete_bb618"
+                         style="display: none; width: 285px; max-height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+        <!--搜索条-end -->
+    </div>
+</div>
+<!--头部-end -->
+
+<!--缓存数据-->
+<input type="hidden" id="pro-global-parameter">
+
+<div class="hr-50"></div>
+
+<div class="product clearfix">
+    <div class="left">
+        <!--商品图片-start -->
+        <div class="product-gallery positionStatic" style="top: 0px;">
+            <div class="relative">
+                <div class="product-gallery-img" id="pic-container">
+                    <div id="wrap" style="position:relative;"><a id="product-img"
+                                                                 class="cloud-zoom"
+                                                                 rel="adjustX: 10, adjustY:0, zoomWidth:400, zoomHeight:400"
+                                                                 style="position: relative; display: block;">
+                        <img id="pic" src=""
+                             alt="HUAWEI P20 Pro" style="display: block;">
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-gallery-nav">
+                <a href="javascript:;" class="product-gallery-back" onclick="ec.product.imgSlider.prev()"></a>
+                <!--不可点击添加class="disabled"-->
+                <!--<div class="product-gallery-thumbs">-->
+                    <!--<ul id="pro-gallerys" style="left: 0px;">-->
+                        <!--<li class="current"><a href="javascript:;"><img-->
+                                <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/78_78_1542766853859mp.png"-->
+                                <!--alt="HUAWEI P20 Pro 6GB+128GB 全网通版（极光色）"></a></li>-->
+                        <!--<li><a href="javascript:;"><img-->
+                                <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/78_78_1522651155743.jpg"-->
+                                <!--alt="HUAWEI P20 Pro 6GB+128GB 全网通版（极光色）"></a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <!--商品图片-end -->
+    </div>
+    <div class="right relative">
+        <!--商品简介-start -->
+        <div class="product-property clearfix relative" style="min-height: 462px; height: auto; padding-bottom: 104px;">
+            <div id="product-property-recommand">
+                <!--商品简介-商品信息-start -->
+                <div class="product-meta">
+                    <h1 id="pro-ds"></h1>
+                    <input class="hide" value="" id="product_sku">
+                </div>
+
+                <div class="hr-15"></div>
+
+                <div class="product-info">
+                    <div class="product-info-list clearfix">
+                        <label>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</label>
+                        <div class="product-price clearfix">
+                            <div class="product-price-info">
+                                <span id="pro-price-label" class="f24" style="display: none;"></span>
+                                <span id="pro-price" class="f24"></span>
+                                <input type="hidden" id="pro-price-hide" value="">
+                                <s id="pro-price-old" style="display: none;"></s>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--商品简介-end -->
+
+                <div class="hr-20"></div>
+
+                <!--商品简介-商品编码-start -->
+                <div class="product-description clearfix">
+                    <label>商品编码</label>
+                    <div class="fl" id="pro-sku-code2"></div>
+                </div>
+                <!--商品简介-商品编码-end -->
+                <div class="hr-5"></div>
+                <div class="line"></div>
+                <div class="hr-40"></div>
+
+
+                <div id="pro-skus" class="">
+
+                </div>
+
+
+                <div class="product-operation-main product-operation-location" style="min-height: 49px;">
+                    <!--商品简介-已选择商品-start -->
+                    <div class="product-description clearfix">
+                        <label>已选择商品:</label>
+                        <div id="pro-select-sku" class="product-selected"></div>
+                    </div>
+                    <!--商品简介-已选择商品-end -->
+                    <!--商品库存-->
+
+                    <!--商品简介-提交操作-start -->
+                    <div id="product-operation" class="product-operation relative" style="display: block;">
+                        <div class="clearfix">
+                            <!--商品简介-购买数量-start -->
+                            <div class="product-stock" id="pro-quantity-area">
+                                <input id="pro-quantity" type="text" class="product-stock-text" placeholder="1"
+                                       value="1">
+                                <p class="product-stock-btn"><a id="pro-quantity-plus">+</a><a
+                                        id="pro-quantity-minus" class="disabled">−</a></p>
+                            </div>
+                            <label style="margin-top: 7px" id="stock">库存233件</label>
+                            <!--商品简介-购买数量-end -->
+                        </div>
+                    </div>
+                    <div class="hr-10"></div>
+                    <div class="product-buttonmain" style="margin-left: 0">
+                        <!--商品简介-按钮-start -->
+                        <div id="pro-operation" class="product-button clearfix" style="display: block">
+                            <a class="product-button01" id="product-button01"><span>加入购物车</span></a>
+                            <a class="product-button02" id="product-button02"><span>立即下单</span></a>
+                        </div>
+                        <div  class="product-button clearfix" id="pro-no-stock" style="display: none">
+                            <a class="product-button02" id="product-button03"><span>无货</span></a>
+                        </div>
+                        <!--商品简介-按钮-end -->
+                    </div>
+                    <div class="gallery-scroll-bottom"></div>
+                </div>
+                <!--商品简介-提交操作-end -->
+            </div>
+        </div>
+        <!--商品简介-属性-end -->
+    </div>
+</div>
+
+
+<div class="hr-20"></div>
+
+<div class="line"></div>
+
+<div class="layout hide" style="display: block;">
+
+</div>
+
+
+<!--商品详情-书签-start -->
+<div class="product-tab" id="product-tab" style="position: static;"><!--移到顶部的时候添加class="product-tab-top"-->
+    <div class="layout relative" id="layoutRelative">
+        <p>
+            <a  id="pro-tab-feature" class="selected" onclick="">商品详情<em></em></a>
+            <!--选中 a 添加 class="selected"-->
+            <a  id="pro-tab-evaluate">用户评价<em></em><span>(58304)</span></a>
+        </p>
+    </div>
+</div>
+<!--商品详情-书签-end -->
+
+
+<!--商品详情-start -->
+<div id="pro-tab-feature-content" class="product-detail relative tit1">
+    <div id="pro-detail-contents">
+        <div id="pro-detail-content" class="pro-detail-see">
+            <div id="kindPicture">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="hr60Detail" class="hr-60"></div>
+<!--商品详情-end -->
+
+<!--评价-start -->
+<div id="productCommentId" class="layout">
+    <!-- 评价筛选标签 -->
+    <!--<div class="product-comment-tab clearfix">-->
+        <!--<ul class="clearfix">-->
+            <!--<li class="current"><a href="javascript:;" extratype="1">最热门</a></li>&lt;!&ndash;选中 li 添加 class="current"&ndash;&gt;-->
+            <!--<li><a href="javascript:;" extratype="2">有图</a></li>-->
+            <!--<li><a href="javascript:;" extratype="0">全部</a></li>-->
+        <!--</ul>-->
+        <!--<div class="fr product-comment-sku">-->
+            <!--<input type="checkbox" id="j-gbomcode4comments"><span>只看当前商品评价</span>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="product-comment">-->
+        <!--&lt;!&ndash;用户评价&ndash;&gt;-->
+        <!--<ul id="pro-msg-list" class="product-comment-list">-->
+            <!--<li class="clearfix">-->
+                <!--<div class="product-comment-user"><p class="product-comment-user-img"><img-->
+                        <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/0e8c8171b4b358f1638e5a4d.jpg"-->
+                        <!--alt="https://res.vmallres.com/rms/comment/image/U0695/0e8c8171b4b358f1638e5a4d.jpg"><i-->
+                        <!--class="icon-vip-level-3"></i></p>-->
+                    <!--<p class="product-comment-user-name">似***华</p></div>-->
+                <!--<div class="product-user-comment">-->
+                    <!--<div class="product-user-comment-detial">-->
+                        <!--<div class="h clearfix">-->
+                            <!--<div class="product-star"><span class="starRating-area"><s style="width:100%"></s></span>-->
+                            <!--</div>-->
+                            <!--<div class="product-user-comment-impress">-->
+                                <!--<dl></dl>-->
+                            <!--</div>-->
+                            <!--<div class="fr">-->
+                                <!--<div class="product-user-comment-time">2019-04-09 09:11:08</div>-->
+                                <!--<a href="javascript:;" class="product-praise-btn" pid="10086471194207"-->
+                                   <!--commentid="66474668229831" type="0"><span>1</span></a></div>-->
+                        <!--</div>-->
+                        <!--<div class="product-user-comment-word" id="10086471194207-66474668229831">-->
+                            <!--物超所值，样子挺好看的！帮别人买的，有点想换手机的冲动了-->
+                        <!--</div>-->
+                        <!--<div class="user-comment-img"><p class="img-small clearfix"><a href="javascript:;"-->
+                                                                                       <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-in.cur),auto;"-->
+                                                                                       <!--class="img-wrap"><img-->
+                                <!--id="66474668230832"-->
+                                <!--image-large="https://res.vmallres.com/rms/comment/image/U0695/40086000026428695/1080/ff593a03819393d0aa8e011b.jpg"-->
+                                <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/ff593a03819393d0aa8e011b.jpg"></a> <a-->
+                                <!--href="javascript:;"-->
+                                <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-in.cur),auto;"-->
+                                <!--class="img-wrap"><img id="66474668230833"-->
+                                                      <!--image-large="https://res.vmallres.com/rms/comment/image/U0695/40086000026428695/1080/700212f0f7a824a88a4e5677.jpg"-->
+                                                      <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/700212f0f7a824a88a4e5677.jpg"></a>-->
+                        <!--</p>-->
+                            <!--<div class="clearfix">-->
+                                <!--<div class="img-big none"><img src="https://www.vmall.com/product/10086471194207.html">-->
+                                    <!--<div class="cursor-prev"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/arrow-left.cur),auto;"></div>-->
+                                    <!--<div class="cursor-small"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-out.cur),auto;"></div>-->
+                                    <!--<div class="cursor-next"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/arrow-right.cur),auto;"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="product-user-comment-sku hide">极光闪蝶,全网通 6GB+128GB,官方标配</div>-->
+                    <!--</div>-->
+                    <!--<div class="product-reply">-->
+                        <!--<div class="product-reply-detail" replycount="1">-->
+                            <!--<div class="product-admin-reply clearfix">-->
+                                <!--<div class="admin-user-img"><img-->
+                                        <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/defaultface_customer_service.png">-->
+                                <!--</div>-->
+                                <!--<dl>-->
+                                    <!--<dt class="red">华为商城客服</dt>-->
+                                    <!--<dd>有了亲亲的赏识，我这如花似玉的容貌也算是有了归处。倘若你问我天涯归途向何处，我也只愿常驻亲亲心深处~</dd>-->
+                                    <!--<dd><a href="javascript:;" class="product-admin-praise-btn" pid="10086471194207"-->
+                                           <!--commentid="66474668229831" replyid="66484073489231"-->
+                                           <!--type="1">赞客服（<span>7</span>）</a></dd>-->
+                                    <!--<dd></dd>-->
+                                <!--</dl>-->
+                            <!--</div>-->
+                            <!--<div class="product-reply-btn" style="display:none;"><a target="_blank"-->
+                                                                                    <!--href="https://www.vmall.com/product/viewReply/10086471194207/66474668229831?t=1555594365524">查看全部<span>1</span>条回复</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li class="clearfix">-->
+                <!--<div class="product-comment-user"><p class="product-comment-user-img"><img-->
+                        <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/3147d87341e160955e35c975.jpg"-->
+                        <!--alt="https://res.vmallres.com/rms/comment/image/U0985/3147d87341e160955e35c975.jpg"><i-->
+                        <!--class="icon-vip-level-2"></i></p>-->
+                    <!--<p class="product-comment-user-name">杰***夏</p></div>-->
+                <!--<div class="product-user-comment">-->
+                    <!--<div class="product-user-comment-detial">-->
+                        <!--<div class="h clearfix">-->
+                            <!--<div class="product-star"><span class="starRating-area"><s style="width:100%"></s></span>-->
+                            <!--</div>-->
+                            <!--<div class="product-user-comment-impress">-->
+                                <!--<dl></dl>-->
+                            <!--</div>-->
+                            <!--<div class="fr">-->
+                                <!--<div class="product-user-comment-time">2019-04-05 21:06:18</div>-->
+                                <!--<a href="javascript:;" class="product-praise-btn" pid="10086471194207"-->
+                                   <!--commentid="66171978374627" type="0"><span>9</span></a></div>-->
+                        <!--</div>-->
+                        <!--<div class="product-user-comment-word" id="10086471194207-66171978374627">拍照效果不错</div>-->
+                        <!--<div class="user-comment-img"><p class="img-small clearfix"><a href="javascript:;"-->
+                                                                                       <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-in.cur),auto;"-->
+                                                                                       <!--class="img-wrap"><img-->
+                                <!--id="66171978854628"-->
+                                <!--image-large="https://res.vmallres.com/rms/comment/image/U0985/260086000252126985/1080/40bd645f431be76770b01544.jpg"-->
+                                <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/40bd645f431be76770b01544.jpg"></a> <a-->
+                                <!--href="javascript:;"-->
+                                <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-in.cur),auto;"-->
+                                <!--class="img-wrap"><img id="66171978854629"-->
+                                                      <!--image-large="https://res.vmallres.com/rms/comment/image/U0985/260086000252126985/1080/864e2447684124b94859f2c6.jpg"-->
+                                                      <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/864e2447684124b94859f2c6.jpg"></a>-->
+                            <!--<a href="javascript:;"-->
+                               <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-in.cur),auto;"-->
+                               <!--class="img-wrap"><img id="66171978854630"-->
+                                                     <!--image-large="https://res.vmallres.com/rms/comment/image/U0985/260086000252126985/1080/63c795aafc203c75e33afb84.jpg"-->
+                                                     <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/63c795aafc203c75e33afb84.jpg"></a>-->
+                        <!--</p>-->
+                            <!--<div class="clearfix">-->
+                                <!--<div class="img-big none"><img src="https://www.vmall.com/product/10086471194207.html">-->
+                                    <!--<div class="cursor-prev"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/arrow-left.cur),auto;"></div>-->
+                                    <!--<div class="cursor-small"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-out.cur),auto;"></div>-->
+                                    <!--<div class="cursor-next"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/arrow-right.cur),auto;"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="product-user-comment-sku hide">极光色,全网通 6GB+128GB,官方标配</div>-->
+                    <!--</div>-->
+                    <!--<div class="product-reply">-->
+                        <!--<div class="product-reply-detail" replycount="1">-->
+                            <!--<div class="product-admin-reply clearfix">-->
+                                <!--<div class="admin-user-img"><img-->
+                                        <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/defaultface_customer_service.png">-->
+                                <!--</div>-->
+                                <!--<dl>-->
+                                    <!--<dt class="red">华为商城客服</dt>-->
+                                    <!--<dd>又到一年小长假，您有您的单反，我有我的AI摄影，不是很酷但是很方便，安排！</dd>-->
+                                    <!--<dd><a href="javascript:;" class="product-admin-praise-btn" pid="10086471194207"-->
+                                           <!--commentid="66171978374627" replyid="66236337957765"-->
+                                           <!--type="1">赞客服（<span>6</span>）</a></dd>-->
+                                    <!--<dd></dd>-->
+                                <!--</dl>-->
+                            <!--</div>-->
+                            <!--<div class="product-reply-btn" style="display:none;"><a target="_blank"-->
+                                                                                    <!--href="https://www.vmall.com/product/viewReply/10086471194207/66171978374627?t=1555594365524">查看全部<span>1</span>条回复</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li class="clearfix">-->
+                <!--<div class="product-comment-user"><p class="product-comment-user-img"><img-->
+                        <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/defaultface_user_after.png"-->
+                        <!--alt="https://res.vmallres.com/nwap/20170828/images/echannelWap/misc/defaultface_user_after.png"><i-->
+                        <!--class="icon-vip-level-3"></i></p>-->
+                    <!--<p class="product-comment-user-name">轻***雨</p></div>-->
+                <!--<div class="product-user-comment">-->
+                    <!--<div class="product-user-comment-detial">-->
+                        <!--<div class="h clearfix">-->
+                            <!--<div class="product-star"><span class="starRating-area"><s style="width:100%"></s></span>-->
+                            <!--</div>-->
+                            <!--<div class="product-user-comment-impress">-->
+                                <!--<dl></dl>-->
+                            <!--</div>-->
+                            <!--<div class="fr">-->
+                                <!--<div class="product-user-comment-time">2019-03-29 15:13:22</div>-->
+                                <!--<a href="javascript:;" class="product-praise-btn" pid="10086471194207"-->
+                                   <!--commentid="65546001790683" type="0"><span>2</span></a></div>-->
+                        <!--</div>-->
+                        <!--<div class="product-user-comment-word" id="10086471194207-65546001790683">-->
+                            <!--手里外观很漂亮，手感很好，拍照效果好，运行速度快。-->
+                        <!--</div>-->
+                        <!--<div class="user-comment-img"><p class="img-small clearfix"><a href="javascript:;"-->
+                                                                                       <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-in.cur),auto;"-->
+                                                                                       <!--class="img-wrap"><img-->
+                                <!--id="65546001791684"-->
+                                <!--image-large="https://res.vmallres.com/rms/comment/image/U0644/260086000095191644/1080/15135ca14c45e64e11457d4f.jpg"-->
+                                <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/15135ca14c45e64e11457d4f.jpg"></a></p>-->
+                            <!--<div class="clearfix">-->
+                                <!--<div class="img-big none"><img src="https://www.vmall.com/product/10086471194207.html">-->
+                                    <!--<div class="cursor-prev"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/arrow-left.cur),auto;"></div>-->
+                                    <!--<div class="cursor-small"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-out.cur),auto;"></div>-->
+                                    <!--<div class="cursor-next"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/arrow-right.cur),auto;"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="product-user-comment-sku hide"></div>-->
+                    <!--</div>-->
+                    <!--<div class="product-reply">-->
+                        <!--<div class="product-reply-detail" replycount="1">-->
+                            <!--<div class="product-admin-reply clearfix">-->
+                                <!--<div class="admin-user-img"><img-->
+                                        <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/defaultface_customer_service.png">-->
+                                <!--</div>-->
+                                <!--<dl>-->
+                                    <!--<dt class="red">华为商城客服</dt>-->
+                                    <!--<dd>我不仅长得倾国倾城，性能也是一骑绝尘哦，不仅能让您目不转睛，也能让您爱不释手哟︿(￣︶￣)︿</dd>-->
+                                    <!--<dd><a href="javascript:;" class="product-admin-praise-btn" pid="10086471194207"-->
+                                           <!--commentid="65546001790683" replyid="65550997444988"-->
+                                           <!--type="1">赞客服（<span>5</span>）</a></dd>-->
+                                    <!--<dd></dd>-->
+                                <!--</dl>-->
+                            <!--</div>-->
+                            <!--<div class="product-reply-btn" style="display:none;"><a target="_blank"-->
+                                                                                    <!--href="https://www.vmall.com/product/viewReply/10086471194207/65546001790683?t=1555594365525">查看全部<span>1</span>条回复</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li class="clearfix">-->
+                <!--<div class="product-comment-user"><p class="product-comment-user-img"><img-->
+                        <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/701e4f716f68a30c37683433.jpg"-->
+                        <!--alt="https://res.vmallres.com/rms/comment/image/U0931/701e4f716f68a30c37683433.jpg"><i-->
+                        <!--class="icon-vip-level-3"></i></p>-->
+                    <!--<p class="product-comment-user-name">跆***练</p></div>-->
+                <!--<div class="product-user-comment">-->
+                    <!--<div class="product-user-comment-detial">-->
+                        <!--<div class="h clearfix">-->
+                            <!--<div class="product-star"><span class="starRating-area"><s style="width:100%"></s></span>-->
+                            <!--</div>-->
+                            <!--<div class="product-user-comment-impress">-->
+                                <!--<dl></dl>-->
+                            <!--</div>-->
+                            <!--<div class="fr">-->
+                                <!--<div class="product-user-comment-time">2019-03-26 12:22:26</div>-->
+                                <!--<a href="javascript:;" class="product-praise-btn" pid="10086471194207"-->
+                                   <!--commentid="65276546416905" type="0"><span>0</span></a></div>-->
+                        <!--</div>-->
+                        <!--<div class="product-user-comment-word" id="10086471194207-65276546416905">快递给力，手机非常棒，超级喜欢😍-->
+                        <!--</div>-->
+                        <!--<div class="user-comment-img"><p class="img-small clearfix"><a href="javascript:;"-->
+                                                                                       <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-in.cur),auto;"-->
+                                                                                       <!--class="img-wrap"><img-->
+                                <!--id="65276546416906"-->
+                                <!--image-large="https://res.vmallres.com/rms/comment/image/U0931/260086000079538931/1080/3598c9d54f129999b30ec9aa.jpg"-->
+                                <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/3598c9d54f129999b30ec9aa.jpg"></a></p>-->
+                            <!--<div class="clearfix">-->
+                                <!--<div class="img-big none"><img src="https://www.vmall.com/product/10086471194207.html">-->
+                                    <!--<div class="cursor-prev"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/arrow-left.cur),auto;"></div>-->
+                                    <!--<div class="cursor-small"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/zoom-out.cur),auto;"></div>-->
+                                    <!--<div class="cursor-next"-->
+                                         <!--style="cursor:url(https://res.vmallres.com/20190327/images/echannel/icon/arrow-right.cur),auto;"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="product-user-comment-sku hide"></div>-->
+                    <!--</div>-->
+                    <!--<div class="product-reply">-->
+                        <!--<div class="product-reply-detail" replycount="1">-->
+                            <!--<div class="product-admin-reply clearfix">-->
+                                <!--<div class="admin-user-img"><img-->
+                                        <!--src="./【HUAWEI P20 Pro】价格_参数_图片_怎么样 - 华为商城_files/defaultface_customer_service.png">-->
+                                <!--</div>-->
+                                <!--<dl>-->
+                                    <!--<dt class="red">华为商城客服</dt>-->
+                                    <!--<dd>我曾经跨过山和大海，也穿过人山人海，我曾经以最快的速度，转眼来到你眼前！^_^</dd>-->
+                                    <!--<dd><a href="javascript:;" class="product-admin-praise-btn" pid="10086471194207"-->
+                                           <!--commentid="65276546416905" replyid="65303053023768"-->
+                                           <!--type="1">赞客服（<span>4</span>）</a></dd>-->
+                                    <!--<dd></dd>-->
+                                <!--</dl>-->
+                            <!--</div>-->
+                            <!--<div class="product-reply-btn" style="display:none;"><a target="_blank"-->
+                                                                                    <!--href="https://www.vmall.com/product/viewReply/10086471194207/65276546416905?t=1555594365525">查看全部<span>1</span>条回复</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <!-- 20180117-没有评论-start -->
+        <div class="product-comment-no hide" id="product-remark-comment-no" style="display: block;">该商品暂无评价</div>
+        <!-- 20180117-没有评论-end -->
+        <!-- 20170519-分页-start -->
+        <!--<div class="product-page">-->
+            <!--<div id="evaluatePageNumber" class="product-page-info"></div>-->
+            <!--<div id="pro-msg-pager" class="pager">-->
+                <!--<ul>-->
+                    <!--<li class="pgNext link first first-empty">|&lt;</li>-->
+                    <!--<li class="pgNext link pre pre-empty">&lt;</li>-->
+                    <!--<span class="qpages"><li class="page-number link pgCurrent">1</li><li-->
+                            <!--class="page-number link">2</li><li class="page-number link">3</li><li-->
+                            <!--class="page-number link">4</li><li class="page-number link">5</li><li-->
+                            <!--class="page-number link">6</li><li class="page-number link">7</li><li-->
+                            <!--class="page-number link">8</li><li class="page-number link">9</li><li-->
+                            <!--class="page-number link">10</li><li class="text">...</li><li-->
+                            <!--class="page-number link page-number-last">184</li></span>-->
+                    <!--<li class="pgNext link next">&gt;</li>-->
+                    <!--<li class="pgNext link last">&gt;|</li>-->
+                    <!--<li class="text quickPager"><span class="fl">第</span>-->
+                        <!--<div id="chatpage"><input id="quickPager" class="pagenum fl" value="1" style="width:20px;"><a-->
+                                <!--id="enter" class="enter fl" href="javascript:void(0)"></a></div>-->
+                        <!--<span class="fl">&nbsp;/184&nbsp;页</span></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 20170519-分页-end &ndash;&gt;-->
+    <!--</div>-->
+</div>
+<!--评价-end -->
+
+<div class="hr-60"></div>
+
+<!--悬浮工具栏-start -->
+<div class="hungBar j-hungBar">
+    <div class="hungBar-content">
+        <a target="_blank"
+           class="hungBar-cart" title="购物车"><span style="display:none;"></span><i>购物车</i></a>
+        <a class="hungBar-top" title="返回顶部" id="hungBar-top"><i>返回顶部</i></a>
+    </div>
+</div>
+<!--悬浮工具栏-end -->
+
+<!--加入购物车的弹出菜单-->
+<div class="ol_box_mask" style="visibility: hidden; background-color: ghostwhite; z-index: 5000;"></div>
+<div id="ol_box" class="ol_box_4"
+     style="visibility: hidden; position: fixed; top: 361px; z-index: 5000;">
+    <div class="box-ct">
+        <div class="box-header">
+            <div class="box-tl"></div>
+            <div class="box-tc">
+                <div class="box-tc1"></div>
+                <div class="box-tc2"><a href="javascript:;" onclick="return false;" title="关闭" class="box-close"></a>
+                </div>
+            </div>
+            <div class="box-tr"></div>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;background:#fff;">
+            <tbody>
+            <tr>
+                <td class="box-cl"></td>
+                <td class="box-cc">
+                    <div class="box-content" style="height: auto;">
+
+                        <div class="b">
+                            <div class="pro-add-success">
+                                <dl>
+                                    <dt><s></s></dt>
+                                    <dd>
+                                        <div class="box-right-2">
+                                            <p></p>
+                                        </div>
+                                        <div class="box-button">
+                                            <a class="box-cancel" id="box-cancel">再逛逛</a>
+                                            <a class="box-ok" id="box-ok" href="/trade/cart">去结算</a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="loader" style="width: 100px; height : 64px; position: fixed; visibility: visible">
+    <div class="loader-inner ball-spin-fade-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    var detailContentHeight = 0;
+    var tit1 = 0;
+    var tit4 = 0;
+    var oTop = 0;
+    var clickFlag = false;
+    var scollFlag = false;
+    var url = location.href;
+    var spuString = decodeURI(url.substring(url.indexOf("spuId"),url.length));
+    var skuString = decodeURI(url.substring(url.indexOf("skuId"),url.indexOf("&")));
+    var spuId = spuString.substring(spuString.indexOf("=") + 1, spuString.length);
+    var skuId = skuString.substring(skuString.indexOf("=") + 1, skuString.length);
+    // 初始化
+    $(function () {
+        startLoading();
+        $.ajax({
+            type: "get",
+            url: "http://localhost:8666/product/productDetail/" + spuId,
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    endLoading();
+                    var propertyOptionList = [];
+                    $("title").html(data.data.product.spuName);
+                    propertyOptionList = data.data.propertyOptionList;
+                    $('#pro-global-parameter').data("sku-detail", data.data.product.skuList);
+                    for (var i = 0; i < propertyOptionList.length; i++) {
+                        var property = propertyOptionList[i].propertyName;
+                        $('#pro-skus').append("<dl class=\"product-choose clearfix\"><label>选择"+property+"</label>\n" +
+                            "                        <div class=\"product-choose-detail\">\n" +
+                            "                            <ul id=\"property"+i+"\" data-attrname=\""+property+"\">\n" +
+                            "                                \n" +
+                            "                            </ul>\n" +
+                            "                        </div>\n" +
+                            "                    </dl>");
+                        var optionList = [];
+                        optionList = propertyOptionList[i].optionList;
+                        for (var j = 0; j < optionList.length; j++) {
+                            var option = optionList[j];
+                            $('#property' + i).append("<li class=\"unselected\" data-attrname=\""+property+"\" data-optionname=\""+option+"\" onclick='selectOption(this)'>\n" +
+                                "                                    <div class=\"sku\"><a title=\""+option+"\"><p><span>"+option+"</span></p></a>\n" +
+                                "                                    </div>\n" +
+                                "                                </li>");
+                        }
+                    }
+                    var skuList = [];
+                    var skuPropertyOptionList = [];
+                    var proSelectSku = "";
+                    skuList = data.data.product.skuList;
+                    var index = 0;
+                    if (skuId != "") {
+                        for (var i = 0; i < skuList.length; i++) {
+                            if (skuList[i].id == skuId) {
+                                index = i;
+                                break;
+                            }
+                        }
+                    }
+                    skuPropertyOptionList = skuList[index].skuPropertyOptionList;
+                    $(".product-choose-detail").each(function (index, element) {
+                        $(element).find("li").each(function () {
+                            var optionName = skuPropertyOptionList[index].optionName;
+                            if ($(this).attr("data-optionname") == optionName) {
+                                proSelectSku += optionName + " / ";
+                                $(this).attr("class", "selected");
+                            }
+                        });
+                    });
+                    for (var i = 0; i < skuPropertyOptionList.length; i++) {
+                        $("#" + skuPropertyOptionList[i].optionName).attr("class", "selected");
+                    }
+                    $("#pro-name").html(skuList[index].skuName);
+                    $("#product_sku").val(skuList[index].id);
+                    $("#pro-price").html("<em>¥</em>" + skuList[index].skuPrice);
+                    $("#pro-sku-code2").html(skuList[index].id);
+                    $("#pro-select-sku").html(proSelectSku.substring(0, proSelectSku.length - 3));
+                    $("#pic").attr("src", skuList[index].imgUrl);
+                    getStock();
+                    // 加载商品详情
+                    var kindPicture = data.data.product.featureImgUrl.split("#");
+                    for (var i = 0; i < kindPicture.length; i++) {
+                        $("#kindPicture").append("<p><img src=\""+kindPicture[i]+"\"></p>");
+                    }
+                }
+            }
+        });
+    });
+
+    // 搜索条
+    $("#search-bar").submit(function (event) {
+        event.preventDefault();
+        var keyword = $('#search-kw').val();
+        var url = "/product/search";
+        window.open(encodeURI(url + "?keyword=" + keyword));
+    });
+
+    // 动态展示不同参数组合的商品
+    function selectOption(option) {
+        var skuList = [];
+        var skuPropertyOptionList = [];
+        skuList = $('#pro-global-parameter').data("sku-detail");
+        var optionName = $(option).attr("data-optionname");
+        var dataAttrname = $(option).attr("data-attrname");
+        $('.selected').each(function (index, element) {
+            if ($(element).attr("data-attrname") == dataAttrname) {
+                $(element).attr("class", "unselected");
+                skuPropertyOptionList[index] = optionName;
+            } else {
+                skuPropertyOptionList[index] = $(element).attr("data-optionname");
+            }
+        });
+        $(option).attr("class", "selected");
+
+        var proSelectSku = "";
+        for (var k = 0; k < skuPropertyOptionList.length; k++) {
+            if (skuPropertyOptionList[k] != undefined) {
+                proSelectSku += skuPropertyOptionList[k] + " / ";
+            }
+        }
+        var flag = true;
+        var i = 0;
+        for (; i < skuList.length; i++) {
+            var skuPropertyOption = skuList[i].skuPropertyOptionList;
+            var j = 0;
+            for (j = 0; j < skuPropertyOption.length; j++) {
+                if (skuPropertyOptionList[j] != skuPropertyOption[j].optionName) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag == true) {
+                break;
+            }
+            flag = true;
+        }
+        $("#pic").attr("src", skuList[i].imgUrl);
+        $("#pro-name").html(skuList[i].skuName);
+        $("#product_sku").val(skuList[i].id);
+        $("#pro-price").html("<em>¥</em>" + skuList[i].skuPrice);
+        $("#pro-sku-code2").html(skuList[i].id);
+        $("#pro-select-sku").html(proSelectSku.substring(0, proSelectSku.length - 3));
+        getStock();
+    }
+
+
+    // 商品购买数量增加
+    $("#pro-quantity-plus").click(function () {
+        var oldVal = $("#pro-quantity").val();
+        if (oldVal == 1) {
+            $("#pro-quantity-minus").attr("class", "abled");
+        }
+        $("#pro-quantity").val(parseInt(oldVal) + 1);
+    });
+    // 商品购买数量减少
+    $("#pro-quantity-minus").click(function () {
+        var oldVal = $("#pro-quantity").val();
+        if (oldVal != 1) {
+            $("#pro-quantity").val(oldVal - 1);
+            if (oldVal == 2) {
+                $("#pro-quantity-minus").attr("class", "disabled");
+            }
+        }
+    });
+
+    $("#pro-quantity").blur(function () {
+        var oldVal = $("#pro-quantity").val();
+        if (oldVal == "") {
+            $("#pro-quantity").val(1);
+        }
+        if ($("#pro-quantity").val() == 1) {
+            $("#pro-quantity-minus").attr("class", "disabled");
+        } else {
+            $("#pro-quantity-minus").attr("class", "abled");
+        }
+    });
+
+    // 商品添加购物车
+    $("#product-button01").click(function () {
+        var skuId = $("#product_sku").val();
+        var skuNum = $("#pro-quantity").val();
+        startLoading();
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8666/trade/putIntoCart",
+            data: JSON.stringify({
+                "skuId" : skuId,
+                "skuNum" : skuNum
+            }),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (data) {
+                endLoading();
+                if (data.code == 200) {
+                    var height = $(window).height();
+                    var width = $(window).width();
+                    $(".ol_box_mask").css("visibility", "visible").css("width", width).css("height", height).css("background-color", "black");
+                    $("#ol_box").css("visibility", "visible").css("left", width / 2 - $("#ol_box").width() / 2);
+                    $(".box-right-2").html("<p>"+$("#pro-name").html()+"成功加入购物车!</p>");
+                }
+            }
+        });
+        // 向后台添加购物车
+    });
+    $("#box-cancel").click(function () {
+        $(".ol_box_mask").css("visibility", "hidden");
+        $("#ol_box").css("visibility", "hidden");
+    });
+    $("#product-button02").click(function () {
+        startLoading();
+        // 提交订单
+        var skuId = $("#product_sku").val();
+        var num = $("#pro-quantity").val();
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8666/trade/createTempOrder",
+            data: JSON.stringify({
+                "skuId" : skuId,
+                "quantity" : num
+            }),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (data) {
+                endLoading();
+                window.location.href = "/trade/tempOrder"
+            }
+        });
+    });
+
+
+    // 返回顶部
+    $("#hungBar-top").click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 500);
+    });
+
+    // 商品详情和商品评价点击和滚动事件
+    $("#pro-msg-pager li.link").click(function () {
+        $("html,body").animate({scrollTop: $("#pro-tab-evaluate-content").offset().top - $("#product-tab").height()}, 100)
+    });
+
+    oTop = $(".product-tab").offset().top;
+    $('#pro-tab-feature').click(function () {
+        if (!clickFlag) {
+            tit1 = $(".tit1").offset().top - 150;
+            if (scollFlag) {
+                tit1 = $(".tit1").offset().top - 50;
+            }
+            clickFlag = true
+        }
+        $("#pro-tab-feature").addClass("selected").siblings().removeClass("selected");
+        $("body,html").animate({scrollTop: tit1 + 75}, 0);
+    });
+
+    $("#pro-tab-evaluate").click(function () {
+        if (!clickFlag) {
+            tit1 = $(".tit1").offset().top - 150;
+            if (scollFlag) {
+                tit1 = $(".tit1").offset().top - 50;
+            }
+            clickFlag = true;
+        }
+        $("#pro-tab-evaluate").addClass("selected").siblings().removeClass("selected");
+        tit4 = tit1 + $("#pro-tab-feature-content").height() + $("#hr60Detail").height();
+        $("body,html").animate({scrollTop: tit4}, 0);
+    });
+
+    $(window).scroll(function () {
+        var a = $(this).scrollTop() + 1;
+        detailContentHeight = $("#pro-tab-feature-content").height() + $("#hr60Detail").height();
+        if (a > oTop) {
+            $(".product-tab").addClass("product-tab-top").css({
+                position: "fixed",
+                top: "0",
+                background: "#fff",
+                width: "100%",
+                "z-index": "100"
+            });
+            $(".product-tab-btn").css({display: "block"});
+            if (!clickFlag) {
+                tit1 = $(".tit1").offset().top - 50
+            }
+            scollFlag = true
+        } else {
+            $(".product-tab").css({position: "static"});
+            $(".product-tab-btn").css({display: "none"});
+            $(".product-tab").removeClass("product-tab-top");
+            if (!clickFlag) {
+                tit1 = $(".tit1").offset().top - 150
+            }
+            scollFlag = false
+        }
+        if (a >= (tit1 + 75) && a < (tit1 + detailContentHeight)) {
+            $("#pro-tab-feature").addClass("selected").siblings().removeClass("selected")
+        }
+        if (a >= (tit1 + detailContentHeight)) {
+            $("#pro-tab-evaluate").addClass("selected").siblings().removeClass("selected")
+        }
+    });
+
+    // 获得商品库存
+    function getStock() {
+        $.ajax({
+            type: "get",
+            url: "http://182.254.188.234:8123/stock/query/" + $("#product_sku").val(),
+            dataType: "json",
+            success: function (data) {
+                var stock = data.data.stock;
+                if (stock == 0) {
+                    $("#pro-operation").css("display", "none");
+                    $("#pro-no-stock").css("display", "block");
+                } else {
+                    $("#pro-operation").css("display", "block");
+                    $("#pro-no-stock").css("display", "none");
+                }
+                if (data.code == 200) {
+                    $("#stock").html("库存"+ stock +"件")
+                }
+            }
+        })
+    }
+
+    function startLoading() {
+        var height = $("body").height();
+        var width = $("body").width();
+        $(".ol_box_mask").css("visibility", "visible").css("width", width).css("height", height).css("background-color", "ghostwhite");
+        $(".loader").css("visibility", "visible").css("left", $(window).width() / 2 - $(".loader").width() / 2).css("top", $(window).height() / 2 - $(".loader").height() / 2);
+    }
+
+    function endLoading() {
+        $(".ol_box_mask").css("visibility", "hidden");
+        $(".loader").css("visibility", "hidden");
+    }
+</script>
 </body>
 </html>

@@ -37,5 +37,7 @@ public class Constants {
 
     public static final String MDSMS_VERCODE_TPLID = "751915103";
 
+    public static final String AUTH_CODE = "mobile:";
+
 
 }

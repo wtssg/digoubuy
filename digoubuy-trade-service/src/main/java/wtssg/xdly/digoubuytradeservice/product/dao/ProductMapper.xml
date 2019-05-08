@@ -9,10 +9,12 @@
     <result column="title_name" jdbcType="VARCHAR" property="titleName" />
     <result column="title_price" jdbcType="DECIMAL" property="titlePrice" />
     <result column="title_img_url" jdbcType="VARCHAR" property="titleImgUrl" />
+    <result column="feature_img_url" jdbcType="VARCHAR" property="featureImgUrl" />
     <result column="status" jdbcType="TINYINT" property="status" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
+
   <resultMap id="ProductDetailMap" type="wtssg.xdly.digoubuytradeservice.product.entity.Product">
     <id column="p_id" jdbcType="BIGINT" property="id" />
     <result column="p_category_id" jdbcType="BIGINT" property="categoryId" />
@@ -21,6 +23,7 @@
     <result column="p_title_name" jdbcType="VARCHAR" property="titleName" />
     <result column="p_title_price" jdbcType="DECIMAL" property="titlePrice" />
     <result column="p_title_img_url" jdbcType="VARCHAR" property="titleImgUrl" />
+    <result column="p_feature_img_url" jdbcType="VARCHAR" property="featureImgUrl" />
     <result column="p_status" jdbcType="TINYINT" property="status" />
     <result column="p_create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="p_update_time" jdbcType="TIMESTAMP" property="updateTime" />
@@ -47,24 +50,29 @@
     <result column="o_enable_flag" jdbcType="TINYINT" property="enableFlag" />
     <result column="o_create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="o_update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="property_name" jdbcType="VARCHAR" property="propertyName" />
+    <result column="option_name" jdbcType="VARCHAR" property="optionName" />
+  </resultMap>
+
+  <resultMap id="SkuPropertyDetailMap" type="wtssg.xdly.digoubuytradeservice.product.entity.SkuPropertyDetail">
+    <result column="property_name" jdbcType="VARCHAR" property="propertyName" />
+    <result column="option_name" jdbcType="VARCHAR" property="optionName" />
   </resultMap>
 
   <sql id="Base_Column_List">
-    id, category_id, brand_id, spu_name, title_name,title_price,title_img_url, status, create_time, update_time
+    id, category_id, brand_id, spu_name, title_name, title_price, title_img_url, feature_img_url, 
+    status, create_time, update_time
   </sql>
 
   <sql id="Product_List">
-    p.id p_id, p.category_id p_category_id, p.brand_id p_brand_id, p.spu_name p_spu_name,
-    p.title_name p_title_name, p.title_price p_title_price, p.title_img_url p_title_img_url,
-    p.status p_status, p.create_time p_create_time, p.update_time p_update_time
+    t.id p_id, t.spu_name p_spu_name, t.feature_img_url p_feature_img_url
   </sql>
   <sql id="Sku_List">
-    s.id s_id, s.spu_id s_spu_id, s.sku_name s_sku_name,s.sku_price s_sku_price,s.img_url s_img_url,
-    s.enable_flag s_enable_flag, s.create_time s_create_time, s.update_time s_update_time
+    s.id s_id, s.sku_name s_sku_name,s.sku_price s_sku_price,s.img_url s_img_url,
+    s.enable_flag s_enable_flag
   </sql>
   <sql id="Sku_Property_Option_List">
-    o.id o_id, o.sku_id o_sku_id, o.property_id o_property_id, o.property_option_id o_property_option_id,
-    o.enable_flag o_enable_flag, o.create_time o_create_time, o.update_time o_update_time
+    p.property_name property_name, po.option_name option_name
   </sql>
 
   <select id="selectProductDetail" resultMap="ProductDetailMap">
@@ -72,18 +80,13 @@
     <include refid="Product_List"/>,
     <include refid="Sku_List"/>,
     <include refid="Sku_Property_Option_List"/>
-    FROM t_product p
-    LEFT JOIN t_sku s ON p.id = s.spu_id
-    LEFT JOIN t_sku_property_option o ON s.id = o.sku_id
-    WHERE p.id = #{productId} AND s.enable_flag = 1 AND o.enable_flag = 1
+    FROM t_product t
+    LEFT JOIN t_sku s ON t.id = s.spu_id
+    LEFT JOIN t_sku_property_option  spo ON  spo.sku_id = s.id
+    LEFT JOIN t_property p ON spo.property_id = p.id
+    LEFT JOIN t_property_option po ON spo.property_option_id = po.id
+    WHERE t.id = #{productId} AND s.enable_flag = 1 AND spo.enable_flag = 1
   </select>
-
-  <!--<select id="selectByCategory" resultMap="BaseResultMap" parameterType="java.lang.Long" >-->
-    <!--select-->
-    <!--<include refid="Base_Column_List" />-->
-    <!--from t_product-->
-    <!--where category_id = #{categoryId} and status =1-->
-  <!--</select>-->
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -91,6 +94,8 @@
     from t_product
     where id = #{id,jdbcType=BIGINT}
   </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_product
     where id = #{id,jdbcType=BIGINT}
@@ -98,12 +103,12 @@
   <insert id="insert" parameterType="wtssg.xdly.digoubuytradeservice.product.entity.Product">
     insert into t_product (id, category_id, brand_id, 
       spu_name, title_name, title_price, 
-      title_img_url, status, create_time, 
-      update_time)
+      title_img_url, feature_img_url, status, 
+      create_time, update_time)
     values (#{id,jdbcType=BIGINT}, #{categoryId,jdbcType=BIGINT}, #{brandId,jdbcType=BIGINT}, 
       #{spuName,jdbcType=VARCHAR}, #{titleName,jdbcType=VARCHAR}, #{titlePrice,jdbcType=DECIMAL}, 
-      #{titleImgUrl,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      #{titleImgUrl,jdbcType=VARCHAR}, #{featureImgUrl,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="wtssg.xdly.digoubuytradeservice.product.entity.Product">
     insert into t_product
@@ -128,6 +133,9 @@
       </if>
       <if test="titleImgUrl != null">
         title_img_url,
+      </if>
+      <if test="featureImgUrl != null">
+        feature_img_url,
       </if>
       <if test="status != null">
         status,
@@ -161,6 +169,9 @@
       <if test="titleImgUrl != null">
         #{titleImgUrl,jdbcType=VARCHAR},
       </if>
+      <if test="featureImgUrl != null">
+        #{featureImgUrl,jdbcType=VARCHAR},
+      </if>
       <if test="status != null">
         #{status,jdbcType=TINYINT},
       </if>
@@ -193,6 +204,9 @@
       <if test="titleImgUrl != null">
         title_img_url = #{titleImgUrl,jdbcType=VARCHAR},
       </if>
+      <if test="featureImgUrl != null">
+        feature_img_url = #{featureImgUrl,jdbcType=VARCHAR},
+      </if>
       <if test="status != null">
         status = #{status,jdbcType=TINYINT},
       </if>
@@ -213,6 +227,7 @@
       title_name = #{titleName,jdbcType=VARCHAR},
       title_price = #{titlePrice,jdbcType=DECIMAL},
       title_img_url = #{titleImgUrl,jdbcType=VARCHAR},
+      feature_img_url = #{featureImgUrl,jdbcType=VARCHAR},
       status = #{status,jdbcType=TINYINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}

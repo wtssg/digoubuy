@@ -11,7 +11,7 @@ public class RandomNumberCodeUtil {
     public static String verCode() {
         Random random = new Random();
         String s = String.valueOf(random.nextInt());
-        return s.substring(2, 6);
+        return s.substring(1, 7);
     }
 
     public static String randomNumber() {

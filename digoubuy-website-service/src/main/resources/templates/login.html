@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0196)https://hwid1.vmall.com/CAS/portal/login.html?validated=true&themeName=red&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Fcaslogin&loginChannel=26000000&reqClientType=26&lang=zh-cn&countryCode=cn -->
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,6 +14,8 @@
     <link href="/css/login/common(1).css" rel="stylesheet" type="text/css">
 
     <link href="/css/login/zh-cn.css" rel="stylesheet" type="text/css">
+
+    <link href="/css/loading.css" rel="stylesheet" type="text/css">
 
 </head>
 <body class="login themeName-red">
@@ -40,16 +41,20 @@
 
                     <div class="h">
 
-                        <span class="loginTitle loginTitle-left actived" data-type="account">帐号登录</span><span
-                            class="loginTitle splitLine loginTitle-right" data-type="qrCode">验证码登录</span>
+                        <span class="actived" id="pwd-login">帐号登录</span><span
+                            class="unactived" id="code-login">验证码登录</span>
 
 
                     </div>
                     <!--使用密码登录-->
-                    <div class="b-account" style="display: block;">
+                    <div class="b-account" id="login1" style="display: block;">
                         <div class="login-form-marginTop">
                             <div class="form-edit-area loginEventForm">
                                 <div class="userAccountLogin-errorTipsDiv" id="errorTip"></div>
+                                <div style="margin-top: 30px">
+                                    <label id="error1" style="color: red; visibility: hidden"></label>
+                                </div>
+
                                 <table border="0" cellpadding="0" cellspacing="0">
                                     <tbody>
                                     <tr>
@@ -70,22 +75,13 @@
                                                        name="password" maxlength="32" tabindex="2"
                                                        style="z-index: 1;" placeholder="请输入密码"></td>
                                     </tr>
-
-                                    <tr>
-                                        <td class="mt-links lineHeightFix" id="operLinkTd" style="visibility: hidden">
-                                            <span id="smsLoginEntrance" class="changeLoginType l"
-                                                  data-type="userAccountLogin" title="短信验证码登录"
-                                                  style="visibility: hidden;"><i class="phoneIcon marginR6"></i>短信验证码登录</span>
-
-                                        </td>
-                                    </tr>
                                     <tr>
                                         <td>
-                                            <div style="margin-bottom:0;"><span class="vam error" id="pwd_login_msg"
+                                            <div style="margin-bottom:0; margin-top: 40px"><span class="vam error" id="pwd_login_msg"
                                                                                 style="display: none;"></span></div>
                                             <input type="button" class="button-login" id="btnLogin"
                                                    data-type="accountLogin" value="登录" tabindex="5">
-                                            <img class="load" src="./登录_files/loading3.gif">
+                                            <img class="load">
                                         </td>
                                     </tr>
                                     <tr>
@@ -93,14 +89,14 @@
                                             <span id="rememberNameSpan"><input type="checkbox" class="checkbox vam"
                                                                                id="remember_me" name="remember_me"
                                                                                tabindex="4"><label for="remember_me"
-                                                                                                   style="vertical-align:middle;">记住地狗帐号</label></span>
+                                                                                                   style="vertical-align:middle;">记住帐号</label></span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="mt-links p0">
                                             <div class="mt-links-float vam clearWidth">
                                                 <span class="regist"><a id="registText" class="btn-primary clearWidth"
-                                                                        href=""
+                                                                        href="/user/register"
                                                                         title="注册帐号">注册帐号</a></span><span
                                                     class="forgot"><a class="btn-primary clearWidth"
                                                                       href=""
@@ -117,7 +113,7 @@
                     </div>
 
                     <!--使用验证码登录-->
-                    <div class="b-account" style="display: none;">
+                    <div class="b-account" id="login2" style="display: none;">
                         <div class="login-form-marginTop smsLogin-form">
                             <div class="form-edit-area loginEventForm">
                                 <div class="smsValidateLogin-errorTipsDiv"></div>
@@ -181,7 +177,7 @@
                                                                                    name="remember_smsMe"
                                                                                    tabindex="4"><label
                                                     for="remember_smsMe"
-                                                    style="vertical-align:middle;">记住地狗帐号</label></span>
+                                                    style="vertical-align:middle;">记住帐号</label></span>
                                             <div class="hidden remeberTip"></div>
                                         </td>
                                     </tr>
@@ -189,7 +185,7 @@
                                         <td class="mt-links p0">
                                             <div class="mt-links-float vam clearWidth">
                                                 <span class="regist"><a class="btn-primary clearWidth"
-                                                                        href=""
+                                                                        href="/user/register"
                                                                         title="注册帐号">注册帐号</a></span><span
                                                     class="forgot"><a class="btn-primary clearWidth"
                                                                       href=""
@@ -209,5 +205,91 @@
         </div>
     </div>
 </div>
+<div class="ol_box_mask" style="visibility: hidden; top: 0;
+    left: 0; opacity: .4; position: fixed; z-index: 5000; width: 1000px; height: 500px"></div>
+<div class="loader" style="width: 100px; height : 64px; position: fixed; visibility: hidden">
+    <div class="loader-inner ball-spin-fade-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $("#pwd-login").click(function () {
+        if ($("#pwd-login").attr("class") != "actived") {
+            $("#pwd-login").attr("class", "actived");
+            $("#code-login").attr("class", "unactived");
+            $("#login1").css("display", "block");
+            $("#login2").css("display", "none");
+        }
+    });
+    $("#code-login").click(function () {
+        if ($("#code-login").attr("class") != "actived") {
+            $("#code-login").attr("class", "actived");
+            $("#pwd-login").attr("class", "unactived");
+            $("#login2").css("display", "block");
+            $("#login1").css("display", "none");
+        }
+    });
+    $("#btnLogin").click(function () {
+        startLoading();
+        var tel = $("#login_userName").val();
+        var pwd = $("#login_password").val();
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:7006/user/login",
+            data: JSON.stringify({
+                "password" : pwd,
+                "mobile" : tel
+            }),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (data) {
+                endLoading();
+                if (data.code == 200) {
+                    window.location.href="/homepage";
+                } else if (data.message == "用户不存在") {
+                    $("#error1").html("手机号未注册").css("visibility", "visible");
+                } else if (data.message == "密码错误") {
+                    $("#error1").html("密码错误").css("visibility", "visible");
+                }
+            }
+        })
+    });
+
+    $("#login_userName").focus(function () {
+        if ($("#error1").html() == "手机号未注册") {
+            $("#error1").css("visibility", "hidden");
+        }
+    });
+    $("#login_password").focus(function () {
+        if ($("#error1").html() == "密码错误") {
+            $("#error1").css("visibility", "hidden");
+        }
+    });
+
+    function startLoading() {
+        var height = $("body").height();
+        var width = $("body").width();
+        var left = $(".login-area").offset().left + $(".login-area").width() / 2 - 10;
+        var top = $("table").offset().top + $("table").height() / 2;
+        $(".ol_box_mask").css("visibility", "visible").css("width", width).css("height", height).css("background-color", "ghostwhite");
+        $(".loader").css("visibility", "visible").css("left", left).css("top", top);
+    }
+
+    function endLoading() {
+        $(".ol_box_mask").css("visibility", "hidden");
+        $(".loader").css("visibility", "hidden");
+    }
+
+</script>
 </body>
+
 </html>

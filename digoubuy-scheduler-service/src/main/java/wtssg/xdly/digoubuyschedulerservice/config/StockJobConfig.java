@@ -37,8 +37,6 @@ public class StockJobConfig {
     }
 
     /**
-     *@Author JackWang [www.coder520.com]
-     *@Date 2018/4/11 17:24
      *@Description  任务配置类
      */
     private LiteJobConfiguration getLiteJobConfiguration(final Class<? extends SimpleJob> jobClass,

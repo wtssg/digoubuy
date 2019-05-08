@@ -11,5 +11,6 @@
     <file url="file://$PROJECT_DIR$/digoubuy-trade-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/digoubuy-user-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/digoubuy-website-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/digoubuy-website-service/src/main/resources/static/css/loaders.css" charset="GBK" />
   </component>
 </project>

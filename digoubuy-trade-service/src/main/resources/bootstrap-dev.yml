@@ -5,7 +5,7 @@ spring:
         binder:
           brokers: ${kafka.brokers.host}
           auto-create-topics: true
-          required-acks: -1
+
   redis:
     host: 106.13.83.153
     port: 6379
