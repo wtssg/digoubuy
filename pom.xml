@@ -55,7 +55,7 @@
         <elasticsearch.version>6.2.2</elasticsearch.version>
         <elasticsearch.rest.version>5.3.3</elasticsearch.rest.version>
 
-        <boot.starter.version>2.0.5.RELEASE</boot.starter.version>
+        <boot.starter.version>2.5.12</boot.starter.version>
         <boot.redis.version>1.4.7.RELEASE</boot.redis.version>
 
         <spring.cloud.netflix>2.0.1.RELEASE</spring.cloud.netflix>
